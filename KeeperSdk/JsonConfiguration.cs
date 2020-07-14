@@ -126,55 +126,62 @@ namespace KeeperSecurity.Sdk
                         _readEpochMillis = DateTimeOffset.Now.ToUnixTimeMilliseconds();
                         if (jsonBytes != null && jsonBytes.Length >= 2)
                         {
-                            _configuration = JsonUtils.ParseJson<JsonConfiguration>(jsonBytes);
-                            if (StorageProtection != null && !string.IsNullOrEmpty(_configuration.security))
+                            try
                             {
-                                var protector = StorageProtection.Resolve(_configuration.security);
-                                if (protector != null)
+                                _configuration = JsonUtils.ParseJson<JsonConfiguration>(jsonBytes);
+                                if (StorageProtection != null && !string.IsNullOrEmpty(_configuration.security))
                                 {
-                                    foreach (var u in _configuration.users)
+                                    var protector = StorageProtection.Resolve(_configuration.security);
+                                    if (protector != null)
                                     {
-                                        if (u.secured != true) continue;
-                                        u.secured = null;
-                                        try
+                                        foreach (var u in _configuration.users)
                                         {
-                                            u.password = protector.Clarify(u.password);
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Debug.WriteLine(e);
-                                            u.password = null;
+                                            if (u.secured != true) continue;
+                                            u.secured = null;
+                                            try
+                                            {
+                                                u.user_password = protector.Clarify(u.user_password);
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Debug.WriteLine(e);
+                                                u.user_password = null;
+                                            }
+
+                                            try
+                                            {
+                                                u.resumeCode = protector.Clarify(u.resumeCode);
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Debug.WriteLine(e);
+                                                u.resumeCode = null;
+                                            }
                                         }
 
-                                        try
+                                        foreach (var d in _configuration.devices)
                                         {
-                                            u.cloneCode = protector.Clarify(u.cloneCode);
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Debug.WriteLine(e);
-                                            u.cloneCode = null;
-                                        }
-                                    }
-
-                                    foreach (var d in _configuration.devices)
-                                    {
-                                        if (d.secured != true) continue;
-                                        d.secured = null;
-                                        try
-                                        {
-                                            d.privateKey = protector.Clarify(d.privateKey);
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Debug.WriteLine(e);
-                                            d.privateKey = null;
+                                            if (d.secured != true) continue;
+                                            d.secured = null;
+                                            try
+                                            {
+                                                d.privateKey = protector.Clarify(d.privateKey);
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Debug.WriteLine(e);
+                                                d.privateKey = null;
+                                            }
                                         }
                                     }
                                 }
                             }
+                            catch (Exception e)
+                            {
+                                Debug.WriteLine(e);
+                            }
                         }
-                        else
+                        if (_configuration == null)
                         {
                             _configuration = new JsonConfiguration();
                         }
@@ -232,13 +239,13 @@ namespace KeeperSecurity.Sdk
 
                         foreach (var user in _configuration.users)
                         {
-                            if (string.IsNullOrEmpty(user.password) && string.IsNullOrEmpty(user.cloneCode)) continue;
+                            if (string.IsNullOrEmpty(user.user_password) && string.IsNullOrEmpty(user.resumeCode)) continue;
                             try
                             {
-                                var encryptedPassword = protector.Obscure(user.password);
-                                var encryptedCloneCode = protector.Obscure(user.cloneCode);
-                                user.password = encryptedPassword;
-                                user.cloneCode = encryptedCloneCode;
+                                var encryptedPassword = protector.Obscure(user.user_password);
+                                var encryptedCloneCode = protector.Obscure(user.resumeCode);
+                                user.user_password = encryptedPassword;
+                                user.resumeCode = encryptedCloneCode;
                                 user.secured = true;
                             }
                             catch (Exception e)
@@ -371,20 +378,20 @@ namespace KeeperSecurity.Sdk
 
         [DataMember(Name = "password", EmitDefaultValue = false)]
         //#pragma warning disable 0649
-        public string password;
+        public string user_password;
         //#pragma warning restore 0649
 
         [DataMember(Name = "mfa_token", EmitDefaultValue = false)]
-        public string twoFactorToken;
+        public string mfaToken;
 
         [DataMember(Name = "server", EmitDefaultValue = false)]
-        public string server;
+        public string _server;
 
         [DataMember(Name = "last_device", EmitDefaultValue = false)]
-        public string lastDevice;
+        public string _lastDevice;
 
-        [DataMember(Name = "clone_code", EmitDefaultValue = false)]
-        public string cloneCode;
+        [DataMember(Name = "resume_code", EmitDefaultValue = false)]
+        public string resumeCode;
 
         [DataMember(Name = "secured", EmitDefaultValue = false)]
         public bool? secured;
@@ -397,18 +404,18 @@ namespace KeeperSecurity.Sdk
             {
                 user = userConf.Username;
             }
-            twoFactorToken = userConf.TwoFactorToken;
-            server = userConf.Server;
-            lastDevice = userConf.DeviceToken;
-            cloneCode = userConf.CloneCode;
+            mfaToken = userConf.TwoFactorToken;
+            _server = userConf.Server;
+            _lastDevice = userConf.DeviceToken;
+            resumeCode = userConf.CloneCode;
         }
 
         string IUserConfiguration.Username => user;
-        string IUserConfiguration.Password => password;
-        string IUserConfiguration.TwoFactorToken => twoFactorToken;
-        string IUserConfiguration.Server => server;
-        string IUserConfiguration.DeviceToken => lastDevice;
-        string IUserConfiguration.CloneCode => cloneCode;
+        string IUserConfiguration.Password => user_password;
+        string IUserConfiguration.TwoFactorToken => mfaToken;
+        string IUserConfiguration.Server => _server;
+        string IUserConfiguration.DeviceToken => _lastDevice;
+        string IUserConfiguration.CloneCode => resumeCode;
         string IConfigurationId.Id => user;
     }
 

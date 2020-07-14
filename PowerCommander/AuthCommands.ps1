@@ -27,14 +27,15 @@ function Connect-Keeper {
 		[Parameter()][string] $Server
 	)
 
-	[Auth] $auth = $Script:Auth
+	[Auth]$auth = $Script:Auth
 
 	if (-not $NewLogin.IsPresent) {
 		if (-not $Username) {
-			[IUserStorage]$storage = $auth.Storage
+			[IConfigurationStorage]$storage = $auth.Storage
 			$Username = $storage.LastLogin
 			if ($Username) {
-				[IUserConfiguration]$userConfig = $storage.GetUser($Username)
+				[IConfigCollection[IUserConfiguration]]$userStorage = $storage.Users
+				[IUserConfiguration]$userConfig = $userStorage.Get($Username)
 				if ($userConfig) {
 					$Password = $userConfig.Password
 				}
@@ -56,13 +57,7 @@ function Connect-Keeper {
 		}
 	}
 
-	while (-not $Password) {
-		$SecurePassword = Read-Host -Prompt '... Password'.PadLeft(20) -AsSecureString
-		$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
-		$Password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-	}
-
-	Disconnect-Keeper
+	$_ = Disconnect-Keeper
 
 	if ($Server) {
 		Write-Debug "Using Keeper Server: $Server"
