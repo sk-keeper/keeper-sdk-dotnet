@@ -420,14 +420,31 @@ namespace Commander
                         switch (ch.Channel)
                         {
                             case DeviceApprovalChannel.Email:
-                                Console.WriteLine("\"email\" to resend email");
+                                if (ch is IDeviceApprovalPushInfo)
+                                {
+                                    Console.WriteLine("\"email_send\" to resend email");
+                                }
+
+                                if (ch is IDeviceApprovalOtpInfo)
+                                {
+                                    Console.WriteLine("\"email_code=<code>\" to validate verification code sent in email");
+                                }
+
                                 break;
                             case DeviceApprovalChannel.KeeperPush:
-                                Console.WriteLine("\"push\" to send Keeper Push notification");
+                                Console.WriteLine("\"keeper_push\" to send Keeper Push notification");
                                 break;
                             case DeviceApprovalChannel.TwoFactorAuth:
-                                Console.WriteLine("\"tfa_code\" to send 2FA code");
-                                Console.WriteLine("<code> provided by your 2FA application");
+                                if (ch is IDeviceApprovalPushInfo)
+                                {
+                                    Console.WriteLine("\"2fa_send\" to send 2FA code");
+                                }
+
+                                if (ch is IDeviceApprovalOtpInfo)
+                                {
+                                    Console.WriteLine("\"2fa_code=<code>\" to validate a code provided by 2FA application");
+                                }
+
                                 break;
                         }
                     }
@@ -453,67 +470,84 @@ namespace Commander
                             deviceApprovalTask.SetResult(true);
                             break;
                         }
+                        
+                        if (string.Compare(answer, "q", StringComparison.InvariantCultureIgnoreCase) == 0)
+                        {
+                            deviceApprovalTask.SetResult(false);
+                            return;
+                        }
 
-                        if (answer.StartsWith("2fa="))
+                        if (answer.StartsWith("2fa=", StringComparison.CurrentCultureIgnoreCase))
                         {
                             TryParseTextToDuration(answer.Substring(4), out duration);
                             continue;
                         }
 
-                        switch (answer.ToLowerInvariant())
+                        if (answer.StartsWith("email_", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            case "q":
-                                deviceApprovalTask.SetResult(false);
-                                return;
-
-                            case "email":
-                                var emailAction = channels
-                                    .OfType<IDeviceApprovalPushInfo>()
-                                    .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.Email);
-                                if (emailAction != null)
-                                {
-                                    await emailAction.InvokeDeviceApprovalPushAction(duration);
-                                }
-
-                                break;
-
-                            case "push":
+                            var emailAction = channels
+                                .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.Email);
+                            if (emailAction != null)
                             {
-                                var pushAction = channels
-                                    .OfType<IDeviceApprovalPushInfo>()
-                                    .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.KeeperPush);
-                                if (pushAction != null)
+                                if (answer.StartsWith("email_code=", StringComparison.InvariantCultureIgnoreCase))
                                 {
-                                    await pushAction.InvokeDeviceApprovalPushAction(duration);
+                                    if (emailAction is IDeviceApprovalOtpInfo otp)
+                                    {
+                                        var code = answer.Substring("email_code=".Length);
+                                        await otp.InvokeDeviceApprovalOtpAction.Invoke(code, duration);
+                                    }
+                                }
+                                else if (string.Compare(answer, "email_send", StringComparison.CurrentCultureIgnoreCase) == 0)
+                                {
+                                    if (emailAction is IDeviceApprovalPushInfo push)
+                                    {
+                                        await push.InvokeDeviceApprovalPushAction(duration);
+                                    }
                                 }
                             }
-
-                                break;
-
-                            case "tfa_code":
-                            {
-                                var pushAction = channels
-                                    .OfType<IDeviceApprovalPushInfo>()
-                                    .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.TwoFactorAuth);
-                                if (pushAction != null)
-                                {
-                                    await pushAction.InvokeDeviceApprovalPushAction(duration);
-                                }
-                            }
-
-                                break;
-
-                            default:
-                                var codeAction = channels
-                                    .OfType<IDeviceApprovalOtpInfo>()
-                                    .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.TwoFactorAuth);
-                                if (codeAction != null)
-                                {
-                                    await codeAction.InvokeDeviceApprovalOtpAction(answer, duration);
-                                }
-
-                                break;
+                            continue;
                         }
+
+                        if (string.Compare(answer, "keeper_push", StringComparison.InvariantCultureIgnoreCase) == 0)
+                        {
+                            var keeperPushAction = channels
+                                .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.KeeperPush);
+                            if (keeperPushAction != null)
+                            {
+                                if (keeperPushAction is IDeviceApprovalPushInfo push)
+                                {
+                                    await push.InvokeDeviceApprovalPushAction(duration);
+                                }
+                            }
+                            continue;
+                        }
+
+                        if (answer.StartsWith("2fa_", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var tfaAction = channels
+                                .FirstOrDefault((x) => x.Channel == DeviceApprovalChannel.TwoFactorAuth);
+                            if (tfaAction != null)
+                            {
+                                if (answer.StartsWith("2fa_code=", StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    if (tfaAction is IDeviceApprovalOtpInfo otp)
+                                    {
+                                        var code = answer.Substring("2fa_code=".Length);
+                                        await otp.InvokeDeviceApprovalOtpAction.Invoke(code, duration);
+                                    }
+                                }
+                                else if (string.Compare(answer, "2fa_send", StringComparison.CurrentCultureIgnoreCase) == 0)
+                                {
+                                    if (tfaAction is IDeviceApprovalPushInfo push)
+                                    {
+                                        await push.InvokeDeviceApprovalPushAction(duration);
+                                    }
+                                }
+                            }
+                            continue;
+                        }
+
+                        Console.WriteLine($"Unsupported command: {answer}");
                     }
 
                     tokenReg.Dispose();

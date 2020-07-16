@@ -27,7 +27,7 @@ namespace AccountSummary {
             "ChRBY2NvdW50U3VtbWFyeS5wcm90bxIOQWNjb3VudFN1bW1hcnkaEEFQSVJl",
             "cXVlc3QucHJvdG8iLwoVQWNjb3VudFN1bW1hcnlSZXF1ZXN0EhYKDnN1bW1h",
             "cnlWZXJzaW9uGAEgASgFIoUEChZBY2NvdW50U3VtbWFyeUVsZW1lbnRzEhEK",
-            "CWNsaWVudEtleRgBIAEoCRIqCghzZXR0aW5ncxgCIAEoCzIYLkFjY291bnRT",
+            "CWNsaWVudEtleRgBIAEoDBIqCghzZXR0aW5ncxgCIAEoCzIYLkFjY291bnRT",
             "dW1tYXJ5LlNldHRpbmdzEioKCGtleXNJbmZvGAMgASgLMhguQWNjb3VudFN1",
             "bW1hcnkuS2V5c0luZm8SKQoIc3luY0xvZ3MYBCADKAsyFy5BY2NvdW50U3Vt",
             "bWFyeS5TeW5jTG9nEhkKEWlzRW50ZXJwcmlzZUFkbWluGAUgASgIEigKB2xp",
@@ -37,84 +37,86 @@ namespace AccountSummary {
             "AygLMhguQWNjb3VudFN1bW1hcnkuS2V5VmFsdWUSMAoPcGVyc29uYWxMaWNl",
             "bnNlGAogASgLMhcuQWNjb3VudFN1bW1hcnkuTGljZW5zZRIeChZmaXhTaGFy",
             "ZWRGb2xkZXJSZWNvcmRzGAsgASgIEhEKCXVzZXJuYW1lcxgMIAMoCRIrCgdk",
-            "ZXZpY2VzGA0gAygLMhouQWNjb3VudFN1bW1hcnkuRGV2aWNlSW5mbyK8AQoK",
+            "ZXZpY2VzGA0gAygLMhouQWNjb3VudFN1bW1hcnkuRGV2aWNlSW5mbyL9AQoK",
             "RGV2aWNlSW5mbxIcChRlbmNyeXB0ZWREZXZpY2VUb2tlbhgBIAEoDBISCgpk",
             "ZXZpY2VOYW1lGAIgASgJEjIKDGRldmljZVN0YXR1cxgDIAEoDjIcLkF1dGhl",
             "bnRpY2F0aW9uLkRldmljZVN0YXR1cxIXCg9kZXZpY2VQdWJsaWNLZXkYBCAB",
             "KAwSGAoQZW5jcnlwdGVkRGF0YUtleRgFIAEoDBIVCg1jbGllbnRWZXJzaW9u",
-            "GAYgASgJIosBCghLZXlzSW5mbxIYChBlbmNyeXB0aW9uUGFyYW1zGAEgASgJ",
-            "EhgKEGVuY3J5cHRlZERhdGFLZXkYAiABKAkSGQoRZGF0YUtleUJhY2t1cERh",
-            "dGUYAyABKAESEwoLdXNlckF1dGhVaWQYBCABKAkSGwoTZW5jcnlwdGVkUHJp",
-            "dmF0ZUtleRgFIAEoCSKBAQoHU3luY0xvZxITCgtjb3VudHJ5TmFtZRgBIAEo",
-            "CRISCgpzZWNvbmRzQWdvGAIgASgDEhIKCmRldmljZU5hbWUYAyABKAkSEwoL",
-            "Y291bnRyeUNvZGUYBCABKAkSEQoJZGV2aWNlVUlEGAUgASgJEhEKCWlwQWRk",
-            "cmVzcxgGIAEoCSLJBQoHTGljZW5zZRIYChBzdWJzY3JpcHRpb25Db2RlGAEg",
-            "ASgJEhUKDXByb2R1Y3RUeXBlSWQYAiABKAUSFwoPcHJvZHVjdFR5cGVOYW1l",
-            "GAMgASgJEhYKDmV4cGlyYXRpb25EYXRlGAQgASgJEh0KFXNlY29uZHNVbml0",
-            "RXhwaXJhdGlvbhgFIAEoAxISCgptYXhEZXZpY2VzGAYgASgFEhQKDGZpbGVQ",
-            "bGFuVHlwZRgHIAEoBRIRCglieXRlc1VzZWQYCCABKAMSEgoKYnl0ZXNUb3Rh",
-            "bBgJIAEoAxIlCh1zZWNvbmRzVW50aWxTdG9yYWdlRXhwaXJhdGlvbhgKIAEo",
-            "AxIdChVzdG9yYWdlRXhwaXJhdGlvbkRhdGUYCyABKAkSLAokaGFzQXV0b1Jl",
-            "bmV3YWJsZUFwcHN0b3JlU3Vic2NyaXB0aW9uGAwgASgIEhMKC2FjY291bnRU",
-            "eXBlGA0gASgFEhgKEHVwbG9hZHNSZW1haW5pbmcYDiABKAUSFAoMZW50ZXJw",
-            "cmlzZUlkGA8gASgFEhMKC2NoYXRFbmFibGVkGBAgASgIEiAKGGF1ZGl0QW5k",
-            "UmVwb3J0aW5nRW5hYmxlZBgRIAEoCBIhChlicmVhY2hXYXRjaEZlYXR1cmVE",
-            "aXNhYmxlGBIgASgIEhIKCmFjY291bnRVaWQYEyABKAkSHAoUYWxsb3dQZXJz",
-            "b25hbExpY2Vuc2UYFCABKAgSEgoKbGljZW5zZWRCeRgVIAEoCRINCgVlbWFp",
-            "bBgWIAEoCRIaChJicmVhY2hXYXRjaEVuYWJsZWQYFyABKAgSGgoSYnJlYWNo",
-            "V2F0Y2hTY2FubmVkGBggASgIEh0KFWJyZWFjaFdhdGNoRXhwaXJhdGlvbhgZ",
-            "IAEoAxIeChZicmVhY2hXYXRjaERhdGVDcmVhdGVkGBogASgDEg0KBWVycm9y",
-            "GBsgASgJIqMBCgVBZGRPbhIUCgxsaWNlbnNlS2V5SWQYASABKAUSDAoEbmFt",
-            "ZRgCIAEoCRIWCg5leHBpcmF0aW9uRGF0ZRgDIAEoAxITCgtjcmVhdGVkRGF0",
-            "ZRgEIAEoAxIPCgdpc1RyaWFsGAUgASgIEg8KB2VuYWJsZWQYBiABKAgSDwoH",
-            "c2Nhbm5lZBgHIAEoCBIWCg5mZWF0dXJlRGlzYWJsZRgIIAEoCCL2BQoIU2V0",
-            "dGluZ3MSDQoFYXVkaXQYASABKAgSIQoZbXVzdFBlcmZyb21BY2NvdW50U2hh",
-            "cmVCeRgCIAEoAxI+Cg5zaGFyZUFjY291bnRUbxgDIAMoCzImLkFjY291bnRT",
-            "dW1tYXJ5Lk1pc3NpbmdBY2NvdW50U2hhcmVLZXkSKwoFcnVsZXMYBCADKAsy",
-            "HC5BY2NvdW50U3VtbWFyeS5QYXNzd29yZFJ1bGUSGgoScGFzc3dvcmRSdWxl",
-            "c0ludHJvGAUgASgJEhYKDmF1dG9CYWNrdXBEYXlzGAYgASgFEg0KBXRoZW1l",
-            "GAcgASgJEg8KB2NoYW5uZWwYCCABKAkSFAoMY2hhbm5lbFZhbHVlGAkgASgJ",
-            "EhUKDXJzYUNvbmZpZ3VyZWQYCiABKAgSFQoNZW1haWxWYXJpZmllZBgLIAEo",
-            "CBIiChptYXN0ZXJQYXNzd29yZExhc3RNb2RpZmllZBgMIAEoARIYChBhY2Nv",
-            "dW50Rm9sZGVyS2V5GA0gASgJEjEKDHNlY3VyaXR5S2V5cxgOIAMoCzIbLkFj",
-            "Y291bnRTdW1tYXJ5LlNlY3VyaXR5S2V5EisKCWtleVZhbHVlcxgPIAMoCzIY",
-            "LkFjY291bnRTdW1tYXJ5LktleVZhbHVlEg8KB3Nzb1VzZXIYECABKAgSGAoQ",
-            "b25saW5lQWNjZXNzT25seRgRIAEoCBIcChRtYXN0ZXJQYXNzd29yZEV4cGly",
-            "eRgSIAEoBRIZChF0d29GYWN0b3JSZXF1aXJlZBgTIAEoCBIWCg5kaXNhbGxv",
-            "d0V4cG9ydBgUIAEoCBIVCg1yZXN0cmljdEZpbGVzGBUgASgIEhoKEnJlc3Ry",
-            "aWN0QWxsU2hhcmluZxgWIAEoCBIXCg9yZXN0cmljdFNoYXJpbmcYFyABKAgS",
-            "IgoacmVzdHJpY3RTaGFyaW5nSW5jb21pbmdBbGwYGCABKAgSKQohcmVzdHJp",
-            "Y3RTaGFyaW5nSW5jb21pbmdFbnRlcnByaXNlGBkgASgIIiYKCEtleVZhbHVl",
-            "EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCSI8ChZNaXNzaW5nQWNjb3Vu",
-            "dFNoYXJlS2V5Eg8KB3JvbGVfaWQYASABKAMSEQoJcHVibGljS2V5GAIgASgJ",
-            "InUKDFBhc3N3b3JkUnVsZRIQCghydWxlVHlwZRgBIAEoCRIPCgdwYXR0ZXJu",
-            "GAIgASgJEg0KBW1hdGNoGAMgASgIEg8KB21pbmltdW0YBCABKAUSEwoLZGVz",
-            "Y3JpcHRpb24YBSABKAkSDQoFdmFsdWUYBiABKAkilwEKC1NlY3VyaXR5S2V5",
-            "EhAKCGRldmljZUlkGAEgASgDEhIKCmRldmljZU5hbWUYAiABKAkSEQoJZGF0",
-            "ZUFkZGVkGAMgASgDEg8KB2lzVmFsaWQYBCABKAgSPgoSZGV2aWNlUmVnaXN0",
-            "cmF0aW9uGAUgASgLMiIuQWNjb3VudFN1bW1hcnkuRGV2aWNlUmVnaXN0cmF0",
-            "aW9uInkKEkRldmljZVJlZ2lzdHJhdGlvbhIRCglrZXlIYW5kbGUYASABKAkS",
-            "EQoJcHVibGljS2V5GAIgASgJEhcKD2F0dGVzdGF0aW9uQ2VydBgDIAEoCRIP",
-            "Cgdjb3VudGVyGAQgASgDEhMKC2NvbXByb21pc2VkGAUgASgIIrACCgVHcm91",
-            "cBINCgVhZG1pbhgBIAEoCBIdChVncm91cFZlcmlmaWNhdGlvbkNvZGUYAiAB",
-            "KAkSLwoNZ3JvdXBTZXR0aW5ncxgDIAMoCzIYLkFjY291bnRTdW1tYXJ5Lktl",
-            "eVZhbHVlEjQKDWFkbWluaXN0cmF0b3IYBCABKAsyHS5BY2NvdW50U3VtbWFy",
-            "eS5BZG1pbmlzdHJhdG9yEg0KBWVycm9yGAUgASgJEhkKEXR3b0ZhY3RvclJl",
-            "cXVpcmVkGAYgASgIEhcKD3Jlc3RyaWN0U2hhcmluZxgHIAEoCBIaChJyZXN0",
-            "cmljdEFsbFNoYXJpbmcYCCABKAgSFgoOYXV0b0JhY2t1cERheXMYCSABKAUS",
-            "GwoTYWRtaW5BY2NvdW50U2hhcmluZxgKIAEoCCLoAQoNQWRtaW5pc3RyYXRv",
-            "chIRCglmaXJzdE5hbWUYASABKAkSEAoIbGFzdE5hbWUYAiABKAkSDQoFZW1h",
-            "aWwYAyABKAkSHAoUY3VycmVudE51bWJlck9mVXNlcnMYBCABKAUSFQoNbnVt",
-            "YmVyT2ZVc2VycxgFIAEoBRIXCg9udW1iZXJPZkRldmljZXMYBiABKAUSGAoQ",
-            "c3Vic2NyaXB0aW9uQ29kZRgHIAEoCRIWCg5leHBpcmF0aW9uRGF0ZRgIIAEo",
-            "CRIUCgxwdXJjaGFzZURhdGUYCSABKAkSDQoFdG90YWwYCiABKAlCKgoYY29t",
-            "LmtlZXBlcnNlY3VyaXR5LnByb3RvQg5BY2NvdW50U3VtbWFyeWIGcHJvdG8z"));
+            "GAYgASgJEhAKCHVzZXJuYW1lGAcgASgJEhEKCWlwQWRkcmVzcxgIIAEoCRIa",
+            "ChJhcHByb3ZlUmVxdWVzdFRpbWUYCSABKAMiiwEKCEtleXNJbmZvEhgKEGVu",
+            "Y3J5cHRpb25QYXJhbXMYASABKAwSGAoQZW5jcnlwdGVkRGF0YUtleRgCIAEo",
+            "DBIZChFkYXRhS2V5QmFja3VwRGF0ZRgDIAEoARITCgt1c2VyQXV0aFVpZBgE",
+            "IAEoDBIbChNlbmNyeXB0ZWRQcml2YXRlS2V5GAUgASgMIoEBCgdTeW5jTG9n",
+            "EhMKC2NvdW50cnlOYW1lGAEgASgJEhIKCnNlY29uZHNBZ28YAiABKAMSEgoK",
+            "ZGV2aWNlTmFtZRgDIAEoCRITCgtjb3VudHJ5Q29kZRgEIAEoCRIRCglkZXZp",
+            "Y2VVSUQYBSABKAwSEQoJaXBBZGRyZXNzGAYgASgJIskFCgdMaWNlbnNlEhgK",
+            "EHN1YnNjcmlwdGlvbkNvZGUYASABKAkSFQoNcHJvZHVjdFR5cGVJZBgCIAEo",
+            "BRIXCg9wcm9kdWN0VHlwZU5hbWUYAyABKAkSFgoOZXhwaXJhdGlvbkRhdGUY",
+            "BCABKAkSHQoVc2Vjb25kc1VuaXRFeHBpcmF0aW9uGAUgASgDEhIKCm1heERl",
+            "dmljZXMYBiABKAUSFAoMZmlsZVBsYW5UeXBlGAcgASgFEhEKCWJ5dGVzVXNl",
+            "ZBgIIAEoAxISCgpieXRlc1RvdGFsGAkgASgDEiUKHXNlY29uZHNVbnRpbFN0",
+            "b3JhZ2VFeHBpcmF0aW9uGAogASgDEh0KFXN0b3JhZ2VFeHBpcmF0aW9uRGF0",
+            "ZRgLIAEoCRIsCiRoYXNBdXRvUmVuZXdhYmxlQXBwc3RvcmVTdWJzY3JpcHRp",
+            "b24YDCABKAgSEwoLYWNjb3VudFR5cGUYDSABKAUSGAoQdXBsb2Fkc1JlbWFp",
+            "bmluZxgOIAEoBRIUCgxlbnRlcnByaXNlSWQYDyABKAUSEwoLY2hhdEVuYWJs",
+            "ZWQYECABKAgSIAoYYXVkaXRBbmRSZXBvcnRpbmdFbmFibGVkGBEgASgIEiEK",
+            "GWJyZWFjaFdhdGNoRmVhdHVyZURpc2FibGUYEiABKAgSEgoKYWNjb3VudFVp",
+            "ZBgTIAEoDBIcChRhbGxvd1BlcnNvbmFsTGljZW5zZRgUIAEoCBISCgpsaWNl",
+            "bnNlZEJ5GBUgASgJEg0KBWVtYWlsGBYgASgJEhoKEmJyZWFjaFdhdGNoRW5h",
+            "YmxlZBgXIAEoCBIaChJicmVhY2hXYXRjaFNjYW5uZWQYGCABKAgSHQoVYnJl",
+            "YWNoV2F0Y2hFeHBpcmF0aW9uGBkgASgDEh4KFmJyZWFjaFdhdGNoRGF0ZUNy",
+            "ZWF0ZWQYGiABKAMSDQoFZXJyb3IYGyABKAkiowEKBUFkZE9uEhQKDGxpY2Vu",
+            "c2VLZXlJZBgBIAEoBRIMCgRuYW1lGAIgASgJEhYKDmV4cGlyYXRpb25EYXRl",
+            "GAMgASgDEhMKC2NyZWF0ZWREYXRlGAQgASgDEg8KB2lzVHJpYWwYBSABKAgS",
+            "DwoHZW5hYmxlZBgGIAEoCBIPCgdzY2FubmVkGAcgASgIEhYKDmZlYXR1cmVE",
+            "aXNhYmxlGAggASgIIvYFCghTZXR0aW5ncxINCgVhdWRpdBgBIAEoCBIhChlt",
+            "dXN0UGVyZnJvbUFjY291bnRTaGFyZUJ5GAIgASgDEj4KDnNoYXJlQWNjb3Vu",
+            "dFRvGAMgAygLMiYuQWNjb3VudFN1bW1hcnkuTWlzc2luZ0FjY291bnRTaGFy",
+            "ZUtleRIrCgVydWxlcxgEIAMoCzIcLkFjY291bnRTdW1tYXJ5LlBhc3N3b3Jk",
+            "UnVsZRIaChJwYXNzd29yZFJ1bGVzSW50cm8YBSABKAkSFgoOYXV0b0JhY2t1",
+            "cERheXMYBiABKAUSDQoFdGhlbWUYByABKAkSDwoHY2hhbm5lbBgIIAEoCRIU",
+            "CgxjaGFubmVsVmFsdWUYCSABKAkSFQoNcnNhQ29uZmlndXJlZBgKIAEoCBIV",
+            "Cg1lbWFpbFZhcmlmaWVkGAsgASgIEiIKGm1hc3RlclBhc3N3b3JkTGFzdE1v",
+            "ZGlmaWVkGAwgASgBEhgKEGFjY291bnRGb2xkZXJLZXkYDSABKAwSMQoMc2Vj",
+            "dXJpdHlLZXlzGA4gAygLMhsuQWNjb3VudFN1bW1hcnkuU2VjdXJpdHlLZXkS",
+            "KwoJa2V5VmFsdWVzGA8gAygLMhguQWNjb3VudFN1bW1hcnkuS2V5VmFsdWUS",
+            "DwoHc3NvVXNlchgQIAEoCBIYChBvbmxpbmVBY2Nlc3NPbmx5GBEgASgIEhwK",
+            "FG1hc3RlclBhc3N3b3JkRXhwaXJ5GBIgASgFEhkKEXR3b0ZhY3RvclJlcXVp",
+            "cmVkGBMgASgIEhYKDmRpc2FsbG93RXhwb3J0GBQgASgIEhUKDXJlc3RyaWN0",
+            "RmlsZXMYFSABKAgSGgoScmVzdHJpY3RBbGxTaGFyaW5nGBYgASgIEhcKD3Jl",
+            "c3RyaWN0U2hhcmluZxgXIAEoCBIiChpyZXN0cmljdFNoYXJpbmdJbmNvbWlu",
+            "Z0FsbBgYIAEoCBIpCiFyZXN0cmljdFNoYXJpbmdJbmNvbWluZ0VudGVycHJp",
+            "c2UYGSABKAgiJgoIS2V5VmFsdWUSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
+            "ASgJIjwKFk1pc3NpbmdBY2NvdW50U2hhcmVLZXkSDwoHcm9sZV9pZBgBIAEo",
+            "AxIRCglwdWJsaWNLZXkYAiABKAwidQoMUGFzc3dvcmRSdWxlEhAKCHJ1bGVU",
+            "eXBlGAEgASgJEg8KB3BhdHRlcm4YAiABKAkSDQoFbWF0Y2gYAyABKAgSDwoH",
+            "bWluaW11bRgEIAEoBRITCgtkZXNjcmlwdGlvbhgFIAEoCRINCgV2YWx1ZRgG",
+            "IAEoCSKXAQoLU2VjdXJpdHlLZXkSEAoIZGV2aWNlSWQYASABKAMSEgoKZGV2",
+            "aWNlTmFtZRgCIAEoCRIRCglkYXRlQWRkZWQYAyABKAMSDwoHaXNWYWxpZBgE",
+            "IAEoCBI+ChJkZXZpY2VSZWdpc3RyYXRpb24YBSABKAsyIi5BY2NvdW50U3Vt",
+            "bWFyeS5EZXZpY2VSZWdpc3RyYXRpb24ieQoSRGV2aWNlUmVnaXN0cmF0aW9u",
+            "EhEKCWtleUhhbmRsZRgBIAEoCRIRCglwdWJsaWNLZXkYAiABKAwSFwoPYXR0",
+            "ZXN0YXRpb25DZXJ0GAMgASgJEg8KB2NvdW50ZXIYBCABKAMSEwoLY29tcHJv",
+            "bWlzZWQYBSABKAgisAIKBUdyb3VwEg0KBWFkbWluGAEgASgIEh0KFWdyb3Vw",
+            "VmVyaWZpY2F0aW9uQ29kZRgCIAEoCRIvCg1ncm91cFNldHRpbmdzGAMgAygL",
+            "MhguQWNjb3VudFN1bW1hcnkuS2V5VmFsdWUSNAoNYWRtaW5pc3RyYXRvchgE",
+            "IAEoCzIdLkFjY291bnRTdW1tYXJ5LkFkbWluaXN0cmF0b3ISDQoFZXJyb3IY",
+            "BSABKAkSGQoRdHdvRmFjdG9yUmVxdWlyZWQYBiABKAgSFwoPcmVzdHJpY3RT",
+            "aGFyaW5nGAcgASgIEhoKEnJlc3RyaWN0QWxsU2hhcmluZxgIIAEoCBIWCg5h",
+            "dXRvQmFja3VwRGF5cxgJIAEoBRIbChNhZG1pbkFjY291bnRTaGFyaW5nGAog",
+            "ASgIIugBCg1BZG1pbmlzdHJhdG9yEhEKCWZpcnN0TmFtZRgBIAEoCRIQCghs",
+            "YXN0TmFtZRgCIAEoCRINCgVlbWFpbBgDIAEoCRIcChRjdXJyZW50TnVtYmVy",
+            "T2ZVc2VycxgEIAEoBRIVCg1udW1iZXJPZlVzZXJzGAUgASgFEhcKD251bWJl",
+            "ck9mRGV2aWNlcxgGIAEoBRIYChBzdWJzY3JpcHRpb25Db2RlGAcgASgJEhYK",
+            "DmV4cGlyYXRpb25EYXRlGAggASgJEhQKDHB1cmNoYXNlRGF0ZRgJIAEoCRIN",
+            "CgV0b3RhbBgKIAEoCUIqChhjb20ua2VlcGVyc2VjdXJpdHkucHJvdG9CDkFj",
+            "Y291bnRTdW1tYXJ5YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Authentication.APIRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.AccountSummaryRequest), global::AccountSummary.AccountSummaryRequest.Parser, new[]{ "SummaryVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.AccountSummaryElements), global::AccountSummary.AccountSummaryElements.Parser, new[]{ "ClientKey", "Settings", "KeysInfo", "SyncLogs", "IsEnterpriseAdmin", "License", "Group", "Enforcements", "Images", "PersonalLicense", "FixSharedFolderRecords", "Usernames", "Devices" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.DeviceInfo), global::AccountSummary.DeviceInfo.Parser, new[]{ "EncryptedDeviceToken", "DeviceName", "DeviceStatus", "DevicePublicKey", "EncryptedDataKey", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.DeviceInfo), global::AccountSummary.DeviceInfo.Parser, new[]{ "EncryptedDeviceToken", "DeviceName", "DeviceStatus", "DevicePublicKey", "EncryptedDataKey", "ClientVersion", "Username", "IpAddress", "ApproveRequestTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.KeysInfo), global::AccountSummary.KeysInfo.Parser, new[]{ "EncryptionParams", "EncryptedDataKey", "DataKeyBackupDate", "UserAuthUid", "EncryptedPrivateKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.SyncLog), global::AccountSummary.SyncLog.Parser, new[]{ "CountryName", "SecondsAgo", "DeviceName", "CountryCode", "DeviceUID", "IpAddress" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.License), global::AccountSummary.License.Parser, new[]{ "SubscriptionCode", "ProductTypeId", "ProductTypeName", "ExpirationDate", "SecondsUnitExpiration", "MaxDevices", "FilePlanType", "BytesUsed", "BytesTotal", "SecondsUntilStorageExpiration", "StorageExpirationDate", "HasAutoRenewableAppstoreSubscription", "AccountType", "UploadsRemaining", "EnterpriseId", "ChatEnabled", "AuditAndReportingEnabled", "BreachWatchFeatureDisable", "AccountUid", "AllowPersonalLicense", "LicensedBy", "Email", "BreachWatchEnabled", "BreachWatchScanned", "BreachWatchExpiration", "BreachWatchDateCreated", "Error" }, null, null, null, null),
@@ -310,9 +312,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "clientKey" field.</summary>
     public const int ClientKeyFieldNumber = 1;
-    private string clientKey_ = "";
+    private pb::ByteString clientKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ClientKey {
+    public pb::ByteString ClientKey {
       get { return clientKey_; }
       set {
         clientKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -506,7 +508,7 @@ namespace AccountSummary {
     public void WriteTo(pb::CodedOutputStream output) {
       if (ClientKey.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(ClientKey);
+        output.WriteBytes(ClientKey);
       }
       if (settings_ != null) {
         output.WriteRawTag(18);
@@ -550,7 +552,7 @@ namespace AccountSummary {
     public int CalculateSize() {
       int size = 0;
       if (ClientKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ClientKey);
       }
       if (settings_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Settings);
@@ -645,7 +647,7 @@ namespace AccountSummary {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            ClientKey = input.ReadString();
+            ClientKey = input.ReadBytes();
             break;
           }
           case 18: {
@@ -748,6 +750,9 @@ namespace AccountSummary {
       devicePublicKey_ = other.devicePublicKey_;
       encryptedDataKey_ = other.encryptedDataKey_;
       clientVersion_ = other.clientVersion_;
+      username_ = other.username_;
+      ipAddress_ = other.ipAddress_;
+      approveRequestTime_ = other.approveRequestTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -822,6 +827,39 @@ namespace AccountSummary {
       }
     }
 
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 7;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "ipAddress" field.</summary>
+    public const int IpAddressFieldNumber = 8;
+    private string ipAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string IpAddress {
+      get { return ipAddress_; }
+      set {
+        ipAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "approveRequestTime" field.</summary>
+    public const int ApproveRequestTimeFieldNumber = 9;
+    private long approveRequestTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ApproveRequestTime {
+      get { return approveRequestTime_; }
+      set {
+        approveRequestTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DeviceInfo);
@@ -841,6 +879,9 @@ namespace AccountSummary {
       if (DevicePublicKey != other.DevicePublicKey) return false;
       if (EncryptedDataKey != other.EncryptedDataKey) return false;
       if (ClientVersion != other.ClientVersion) return false;
+      if (Username != other.Username) return false;
+      if (IpAddress != other.IpAddress) return false;
+      if (ApproveRequestTime != other.ApproveRequestTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -853,6 +894,9 @@ namespace AccountSummary {
       if (DevicePublicKey.Length != 0) hash ^= DevicePublicKey.GetHashCode();
       if (EncryptedDataKey.Length != 0) hash ^= EncryptedDataKey.GetHashCode();
       if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (IpAddress.Length != 0) hash ^= IpAddress.GetHashCode();
+      if (ApproveRequestTime != 0L) hash ^= ApproveRequestTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -890,6 +934,18 @@ namespace AccountSummary {
         output.WriteRawTag(50);
         output.WriteString(ClientVersion);
       }
+      if (Username.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Username);
+      }
+      if (IpAddress.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(IpAddress);
+      }
+      if (ApproveRequestTime != 0L) {
+        output.WriteRawTag(72);
+        output.WriteInt64(ApproveRequestTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -915,6 +971,15 @@ namespace AccountSummary {
       }
       if (ClientVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
+      }
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (IpAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IpAddress);
+      }
+      if (ApproveRequestTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ApproveRequestTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -944,6 +1009,15 @@ namespace AccountSummary {
       }
       if (other.ClientVersion.Length != 0) {
         ClientVersion = other.ClientVersion;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.IpAddress.Length != 0) {
+        IpAddress = other.IpAddress;
+      }
+      if (other.ApproveRequestTime != 0L) {
+        ApproveRequestTime = other.ApproveRequestTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -978,6 +1052,18 @@ namespace AccountSummary {
           }
           case 50: {
             ClientVersion = input.ReadString();
+            break;
+          }
+          case 58: {
+            Username = input.ReadString();
+            break;
+          }
+          case 66: {
+            IpAddress = input.ReadString();
+            break;
+          }
+          case 72: {
+            ApproveRequestTime = input.ReadInt64();
             break;
           }
         }
@@ -1026,9 +1112,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "encryptionParams" field.</summary>
     public const int EncryptionParamsFieldNumber = 1;
-    private string encryptionParams_ = "";
+    private pb::ByteString encryptionParams_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EncryptionParams {
+    public pb::ByteString EncryptionParams {
       get { return encryptionParams_; }
       set {
         encryptionParams_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -1037,9 +1123,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "encryptedDataKey" field.</summary>
     public const int EncryptedDataKeyFieldNumber = 2;
-    private string encryptedDataKey_ = "";
+    private pb::ByteString encryptedDataKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EncryptedDataKey {
+    public pb::ByteString EncryptedDataKey {
       get { return encryptedDataKey_; }
       set {
         encryptedDataKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -1059,9 +1145,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "userAuthUid" field.</summary>
     public const int UserAuthUidFieldNumber = 4;
-    private string userAuthUid_ = "";
+    private pb::ByteString userAuthUid_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UserAuthUid {
+    public pb::ByteString UserAuthUid {
       get { return userAuthUid_; }
       set {
         userAuthUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -1070,9 +1156,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "encryptedPrivateKey" field.</summary>
     public const int EncryptedPrivateKeyFieldNumber = 5;
-    private string encryptedPrivateKey_ = "";
+    private pb::ByteString encryptedPrivateKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EncryptedPrivateKey {
+    public pb::ByteString EncryptedPrivateKey {
       get { return encryptedPrivateKey_; }
       set {
         encryptedPrivateKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -1123,11 +1209,11 @@ namespace AccountSummary {
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncryptionParams.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(EncryptionParams);
+        output.WriteBytes(EncryptionParams);
       }
       if (EncryptedDataKey.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(EncryptedDataKey);
+        output.WriteBytes(EncryptedDataKey);
       }
       if (DataKeyBackupDate != 0D) {
         output.WriteRawTag(25);
@@ -1135,11 +1221,11 @@ namespace AccountSummary {
       }
       if (UserAuthUid.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(UserAuthUid);
+        output.WriteBytes(UserAuthUid);
       }
       if (EncryptedPrivateKey.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(EncryptedPrivateKey);
+        output.WriteBytes(EncryptedPrivateKey);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1150,19 +1236,19 @@ namespace AccountSummary {
     public int CalculateSize() {
       int size = 0;
       if (EncryptionParams.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EncryptionParams);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptionParams);
       }
       if (EncryptedDataKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EncryptedDataKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptedDataKey);
       }
       if (DataKeyBackupDate != 0D) {
         size += 1 + 8;
       }
       if (UserAuthUid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserAuthUid);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(UserAuthUid);
       }
       if (EncryptedPrivateKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EncryptedPrivateKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptedPrivateKey);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1202,11 +1288,11 @@ namespace AccountSummary {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            EncryptionParams = input.ReadString();
+            EncryptionParams = input.ReadBytes();
             break;
           }
           case 18: {
-            EncryptedDataKey = input.ReadString();
+            EncryptedDataKey = input.ReadBytes();
             break;
           }
           case 25: {
@@ -1214,11 +1300,11 @@ namespace AccountSummary {
             break;
           }
           case 34: {
-            UserAuthUid = input.ReadString();
+            UserAuthUid = input.ReadBytes();
             break;
           }
           case 42: {
-            EncryptedPrivateKey = input.ReadString();
+            EncryptedPrivateKey = input.ReadBytes();
             break;
           }
         }
@@ -1312,9 +1398,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "deviceUID" field.</summary>
     public const int DeviceUIDFieldNumber = 5;
-    private string deviceUID_ = "";
+    private pb::ByteString deviceUID_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DeviceUID {
+    public pb::ByteString DeviceUID {
       get { return deviceUID_; }
       set {
         deviceUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -1394,7 +1480,7 @@ namespace AccountSummary {
       }
       if (DeviceUID.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(DeviceUID);
+        output.WriteBytes(DeviceUID);
       }
       if (IpAddress.Length != 0) {
         output.WriteRawTag(50);
@@ -1421,7 +1507,7 @@ namespace AccountSummary {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
       }
       if (DeviceUID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUID);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(DeviceUID);
       }
       if (IpAddress.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(IpAddress);
@@ -1483,7 +1569,7 @@ namespace AccountSummary {
             break;
           }
           case 42: {
-            DeviceUID = input.ReadString();
+            DeviceUID = input.ReadBytes();
             break;
           }
           case 50: {
@@ -1756,9 +1842,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "accountUid" field.</summary>
     public const int AccountUidFieldNumber = 19;
-    private string accountUid_ = "";
+    private pb::ByteString accountUid_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string AccountUid {
+    public pb::ByteString AccountUid {
       get { return accountUid_; }
       set {
         accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -2016,7 +2102,7 @@ namespace AccountSummary {
       }
       if (AccountUid.Length != 0) {
         output.WriteRawTag(154, 1);
-        output.WriteString(AccountUid);
+        output.WriteBytes(AccountUid);
       }
       if (AllowPersonalLicense != false) {
         output.WriteRawTag(160, 1);
@@ -2113,7 +2199,7 @@ namespace AccountSummary {
         size += 2 + 1;
       }
       if (AccountUid.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
+        size += 2 + pb::CodedOutputStream.ComputeBytesSize(AccountUid);
       }
       if (AllowPersonalLicense != false) {
         size += 2 + 1;
@@ -2315,7 +2401,7 @@ namespace AccountSummary {
             break;
           }
           case 154: {
-            AccountUid = input.ReadString();
+            AccountUid = input.ReadBytes();
             break;
           }
           case 160: {
@@ -2871,9 +2957,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "accountFolderKey" field.</summary>
     public const int AccountFolderKeyFieldNumber = 13;
-    private string accountFolderKey_ = "";
+    private pb::ByteString accountFolderKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string AccountFolderKey {
+    public pb::ByteString AccountFolderKey {
       get { return accountFolderKey_; }
       set {
         accountFolderKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -3148,7 +3234,7 @@ namespace AccountSummary {
       }
       if (AccountFolderKey.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(AccountFolderKey);
+        output.WriteBytes(AccountFolderKey);
       }
       securityKeys_.WriteTo(output, _repeated_securityKeys_codec);
       keyValues_.WriteTo(output, _repeated_keyValues_codec);
@@ -3233,7 +3319,7 @@ namespace AccountSummary {
         size += 1 + 8;
       }
       if (AccountFolderKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountFolderKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AccountFolderKey);
       }
       size += securityKeys_.CalculateSize(_repeated_securityKeys_codec);
       size += keyValues_.CalculateSize(_repeated_keyValues_codec);
@@ -3405,7 +3491,7 @@ namespace AccountSummary {
             break;
           }
           case 106: {
-            AccountFolderKey = input.ReadString();
+            AccountFolderKey = input.ReadBytes();
             break;
           }
           case 114: {
@@ -3667,9 +3753,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "publicKey" field.</summary>
     public const int PublicKeyFieldNumber = 2;
-    private string publicKey_ = "";
+    private pb::ByteString publicKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PublicKey {
+    public pb::ByteString PublicKey {
       get { return publicKey_; }
       set {
         publicKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -3718,7 +3804,7 @@ namespace AccountSummary {
       }
       if (PublicKey.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(PublicKey);
+        output.WriteBytes(PublicKey);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3732,7 +3818,7 @@ namespace AccountSummary {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(RoleId);
       }
       if (PublicKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PublicKey);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3767,7 +3853,7 @@ namespace AccountSummary {
             break;
           }
           case 18: {
-            PublicKey = input.ReadString();
+            PublicKey = input.ReadBytes();
             break;
           }
         }
@@ -4343,9 +4429,9 @@ namespace AccountSummary {
 
     /// <summary>Field number for the "publicKey" field.</summary>
     public const int PublicKeyFieldNumber = 2;
-    private string publicKey_ = "";
+    private pb::ByteString publicKey_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PublicKey {
+    public pb::ByteString PublicKey {
       get { return publicKey_; }
       set {
         publicKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -4433,7 +4519,7 @@ namespace AccountSummary {
       }
       if (PublicKey.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(PublicKey);
+        output.WriteBytes(PublicKey);
       }
       if (AttestationCert.Length != 0) {
         output.WriteRawTag(26);
@@ -4459,7 +4545,7 @@ namespace AccountSummary {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(KeyHandle);
       }
       if (PublicKey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicKey);
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PublicKey);
       }
       if (AttestationCert.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AttestationCert);
@@ -4512,7 +4598,7 @@ namespace AccountSummary {
             break;
           }
           case 18: {
-            PublicKey = input.ReadString();
+            PublicKey = input.ReadBytes();
             break;
           }
           case 26: {

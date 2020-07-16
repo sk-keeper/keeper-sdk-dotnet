@@ -24,35 +24,31 @@ namespace Push {
     static PushReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpwdXNoLnByb3RvEgRQdXNoGhBBUElSZXF1ZXN0LnByb3RvIloKF1VzZXJS",
-            "ZWdpc3RyYXRpb25SZXF1ZXN0EhkKEW1lc3NhZ2VTZXNzaW9uVWlkGAEgASgM",
-            "Eg4KBnVzZXJJZBgCIAEoBRIUCgxlbnRlcnByaXNlSWQYAyABKAUirwEKFUtB",
-            "VG9QdXNoU2VydmVyUmVxdWVzdBImCgttZXNzYWdlVHlwZRgBIAEoDjIRLlB1",
-            "c2guTWVzc2FnZVR5cGUSDwoHbWVzc2FnZRgCIAEoCRIZChFtZXNzYWdlU2Vz",
-            "c2lvblVpZBgDIAEoDBIcChRlbmNyeXB0ZWREZXZpY2VUb2tlbhgEIAMoDBIO",
-            "CgZ1c2VySWQYBSADKAUSFAoMZW50ZXJwcmlzZUlkGAYgAygFIpEBChRBcHBy",
-            "b3ZlRGV2aWNlUmVxdWVzdBImCgttZXNzYWdlVHlwZRgBIAEoDjIRLlB1c2gu",
-            "TWVzc2FnZVR5cGUSDwoHbWVzc2FnZRgCIAEoCRJAChNkZXZpY2VBcHByb3Zl",
-            "U3RhdHVzGAMgAygLMiMuQXV0aGVudGljYXRpb24uRGV2aWNlQXBwcm92ZVN0",
-            "YXR1cyJoChRXc3NDb25uZWN0aW9uUmVxdWVzdBIZChFtZXNzYWdlU2Vzc2lv",
-            "blVpZBgBIAEoDBIcChRlbmNyeXB0ZWREZXZpY2VUb2tlbhgCIAEoDBIXCg9k",
-            "ZXZpY2VUaW1lU3RhbXAYAyABKAMiTAoRV3NzQ2xpZW50UmVzcG9uc2USJgoL",
-            "bWVzc2FnZVR5cGUYASABKA4yES5QdXNoLk1lc3NhZ2VUeXBlEg8KB21lc3Nh",
-            "Z2UYAiABKAkiiwEKI1B1c2hTZXJ2ZXJEZXZpY2VSZWdpc3RyYXRpb25SZXF1",
-            "ZXN0EhwKFGVuY3J5cHRlZERldmljZVRva2VuGAEgASgMEhEKCXB1c2hUb2tl",
-            "bhgCIAEoCRIaChJtb2JpbGVQdXNoUGxhdGZvcm0YAyABKAkSFwoPdHJhbnNt",
-            "aXNzaW9uS2V5GAQgASgMIkUKClNuc01lc3NhZ2USJgoLbWVzc2FnZVR5cGUY",
-            "ASABKA4yES5QdXNoLk1lc3NhZ2VUeXBlEg8KB21lc3NhZ2UYAiABKAwqfwoL",
-            "TWVzc2FnZVR5cGUSCwoHVU5LTk9XThAAEgcKA0ROQRABEgcKA1NTTxACEggK",
-            "BENIQVQQAxIICgRVU0VSEAQSDgoKRU5URVJQUklTRRAFEgoKBktFRVBFUhAG",
-            "EgsKB1NFU1NJT04QBxIKCgZERVZJQ0UQCBIICgRUT1RQEAlCIAoYY29tLmtl",
-            "ZXBlcnNlY3VyaXR5LnByb3RvQgRQdXNoYgZwcm90bzM="));
+            "CgpwdXNoLnByb3RvEgRQdXNoIloKF1VzZXJSZWdpc3RyYXRpb25SZXF1ZXN0",
+            "EhkKEW1lc3NhZ2VTZXNzaW9uVWlkGAEgASgMEg4KBnVzZXJJZBgCIAEoBRIU",
+            "CgxlbnRlcnByaXNlSWQYAyABKAUirwEKFUtBVG9QdXNoU2VydmVyUmVxdWVz",
+            "dBImCgttZXNzYWdlVHlwZRgBIAEoDjIRLlB1c2guTWVzc2FnZVR5cGUSDwoH",
+            "bWVzc2FnZRgCIAEoCRIZChFtZXNzYWdlU2Vzc2lvblVpZBgDIAEoDBIcChRl",
+            "bmNyeXB0ZWREZXZpY2VUb2tlbhgEIAMoDBIOCgZ1c2VySWQYBSADKAUSFAoM",
+            "ZW50ZXJwcmlzZUlkGAYgAygFImgKFFdzc0Nvbm5lY3Rpb25SZXF1ZXN0EhkK",
+            "EW1lc3NhZ2VTZXNzaW9uVWlkGAEgASgMEhwKFGVuY3J5cHRlZERldmljZVRv",
+            "a2VuGAIgASgMEhcKD2RldmljZVRpbWVTdGFtcBgDIAEoAyJMChFXc3NDbGll",
+            "bnRSZXNwb25zZRImCgttZXNzYWdlVHlwZRgBIAEoDjIRLlB1c2guTWVzc2Fn",
+            "ZVR5cGUSDwoHbWVzc2FnZRgCIAEoCSKLAQojUHVzaFNlcnZlckRldmljZVJl",
+            "Z2lzdHJhdGlvblJlcXVlc3QSHAoUZW5jcnlwdGVkRGV2aWNlVG9rZW4YASAB",
+            "KAwSEQoJcHVzaFRva2VuGAIgASgJEhoKEm1vYmlsZVB1c2hQbGF0Zm9ybRgD",
+            "IAEoCRIXCg90cmFuc21pc3Npb25LZXkYBCABKAwiRQoKU25zTWVzc2FnZRIm",
+            "CgttZXNzYWdlVHlwZRgBIAEoDjIRLlB1c2guTWVzc2FnZVR5cGUSDwoHbWVz",
+            "c2FnZRgCIAEoDCp/CgtNZXNzYWdlVHlwZRILCgdVTktOT1dOEAASBwoDRE5B",
+            "EAESBwoDU1NPEAISCAoEQ0hBVBADEggKBFVTRVIQBBIOCgpFTlRFUlBSSVNF",
+            "EAUSCgoGS0VFUEVSEAYSCwoHU0VTU0lPThAHEgoKBkRFVklDRRAIEggKBFRP",
+            "VFAQCUIgChhjb20ua2VlcGVyc2VjdXJpdHkucHJvdG9CBFB1c2hiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Authentication.APIRequestReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Push.MessageType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Push.UserRegistrationRequest), global::Push.UserRegistrationRequest.Parser, new[]{ "MessageSessionUid", "UserId", "EnterpriseId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Push.KAToPushServerRequest), global::Push.KAToPushServerRequest.Parser, new[]{ "MessageType", "Message", "MessageSessionUid", "EncryptedDeviceToken", "UserId", "EnterpriseId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Push.ApproveDeviceRequest), global::Push.ApproveDeviceRequest.Parser, new[]{ "MessageType", "Message", "DeviceApproveStatus" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Push.WssConnectionRequest), global::Push.WssConnectionRequest.Parser, new[]{ "MessageSessionUid", "EncryptedDeviceToken", "DeviceTimeStamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Push.WssClientResponse), global::Push.WssClientResponse.Parser, new[]{ "MessageType", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Push.PushServerDeviceRegistrationRequest), global::Push.PushServerDeviceRegistrationRequest.Parser, new[]{ "EncryptedDeviceToken", "PushToken", "MobilePushPlatform", "TransmissionKey" }, null, null, null, null),
@@ -98,7 +94,7 @@ namespace Push {
     /// </summary>
     [pbr::OriginalName("DEVICE")] Device = 8,
     /// <summary>
-    /// to 2FA 	
+    /// to 2FA
     /// </summary>
     [pbr::OriginalName("TOTP")] Totp = 9,
   }
@@ -547,183 +543,6 @@ namespace Push {
 
   }
 
-  public sealed partial class ApproveDeviceRequest : pb::IMessage<ApproveDeviceRequest> {
-    private static readonly pb::MessageParser<ApproveDeviceRequest> _parser = new pb::MessageParser<ApproveDeviceRequest>(() => new ApproveDeviceRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ApproveDeviceRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Push.PushReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ApproveDeviceRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ApproveDeviceRequest(ApproveDeviceRequest other) : this() {
-      messageType_ = other.messageType_;
-      message_ = other.message_;
-      deviceApproveStatus_ = other.deviceApproveStatus_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ApproveDeviceRequest Clone() {
-      return new ApproveDeviceRequest(this);
-    }
-
-    /// <summary>Field number for the "messageType" field.</summary>
-    public const int MessageTypeFieldNumber = 1;
-    private global::Push.MessageType messageType_ = global::Push.MessageType.Unknown;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Push.MessageType MessageType {
-      get { return messageType_; }
-      set {
-        messageType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
-    private string message_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "deviceApproveStatus" field.</summary>
-    public const int DeviceApproveStatusFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Authentication.DeviceApproveStatus> _repeated_deviceApproveStatus_codec
-        = pb::FieldCodec.ForMessage(26, global::Authentication.DeviceApproveStatus.Parser);
-    private readonly pbc::RepeatedField<global::Authentication.DeviceApproveStatus> deviceApproveStatus_ = new pbc::RepeatedField<global::Authentication.DeviceApproveStatus>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Authentication.DeviceApproveStatus> DeviceApproveStatus {
-      get { return deviceApproveStatus_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ApproveDeviceRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ApproveDeviceRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (MessageType != other.MessageType) return false;
-      if (Message != other.Message) return false;
-      if(!deviceApproveStatus_.Equals(other.deviceApproveStatus_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (MessageType != global::Push.MessageType.Unknown) hash ^= MessageType.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      hash ^= deviceApproveStatus_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (MessageType != global::Push.MessageType.Unknown) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) MessageType);
-      }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
-      }
-      deviceApproveStatus_.WriteTo(output, _repeated_deviceApproveStatus_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (MessageType != global::Push.MessageType.Unknown) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MessageType);
-      }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      size += deviceApproveStatus_.CalculateSize(_repeated_deviceApproveStatus_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ApproveDeviceRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.MessageType != global::Push.MessageType.Unknown) {
-        MessageType = other.MessageType;
-      }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-      deviceApproveStatus_.Add(other.deviceApproveStatus_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            MessageType = (global::Push.MessageType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Message = input.ReadString();
-            break;
-          }
-          case 26: {
-            deviceApproveStatus_.AddEntriesFrom(input, _repeated_deviceApproveStatus_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   /// <summary>
   ///Client sends to push
   /// </summary>
@@ -735,7 +554,7 @@ namespace Push {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Push.PushReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Push.PushReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -926,7 +745,7 @@ namespace Push {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Push.PushReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Push.PushReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1083,7 +902,7 @@ namespace Push {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Push.PushReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Push.PushReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1296,7 +1115,7 @@ namespace Push {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Push.PushReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Push.PushReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

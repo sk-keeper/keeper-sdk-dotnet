@@ -207,91 +207,91 @@ namespace Authentication {
             "eXB0ZWREZXZpY2VUb2tlbhgFIAEoDBIQCgh0b3RwQ29kZRgGIAEoCRIQCghk",
             "ZXZpY2VJcBgHIAEoCRIdChVkZXZpY2VUb2tlbkV4cGlyZURheXMYCCABKAki",
             "OQoWRGV2aWNlQXBwcm92YWxSZXNwb25zZRIfChdlbmNyeXB0ZWRUd29GYWN0",
-            "b3JUb2tlbhgBIAEoDCJFChNEZXZpY2VBcHByb3ZlU3RhdHVzEhAKCGFwcHJv",
-            "dmVkGAEgASgIEhwKFGVuY3J5cHRlZERldmljZVRva2VuGAIgASgMInIKGkRl",
-            "dmljZUFwcHJvdmVTdGF0dXNSZXF1ZXN0EhIKCmFjY291bnRVaWQYASABKAwS",
-            "QAoTZGV2aWNlQXBwcm92ZVN0YXR1cxgCIAMoCzIjLkF1dGhlbnRpY2F0aW9u",
-            "LkRldmljZUFwcHJvdmVTdGF0dXMiRQoaRW50ZXJwcmlzZVVzZXJBbGlhc1Jl",
-            "cXVlc3QSGAoQZW50ZXJwcmlzZVVzZXJJZBgBIAEoAxINCgVhbGlhcxgCIAEo",
-            "CSImCgZEZXZpY2USHAoUZW5jcnlwdGVkRGV2aWNlVG9rZW4YASABKAwiXAoc",
-            "UmVnaXN0ZXJEZXZpY2VEYXRhS2V5UmVxdWVzdBIcChRlbmNyeXB0ZWREZXZp",
-            "Y2VUb2tlbhgBIAEoDBIeChZlbmNyeXB0ZWREZXZpY2VEYXRhS2V5GAIgASgM",
-            "IokBCilWYWxpZGF0ZUNyZWF0ZVVzZXJWZXJpZmljYXRpb25Db2RlUmVxdWVz",
-            "dBIQCgh1c2VybmFtZRgBIAEoCRIVCg1jbGllbnRWZXJzaW9uGAIgASgJEhgK",
-            "EHZlcmlmaWNhdGlvbkNvZGUYAyABKAkSGQoRbWVzc2FnZVNlc3Npb25VaWQY",
-            "BCABKAwihQEKJVZhbGlkYXRlRGV2aWNlVmVyaWZpY2F0aW9uQ29kZVJlcXVl",
-            "c3QSEAoIdXNlcm5hbWUYASABKAkSFQoNY2xpZW50VmVyc2lvbhgCIAEoCRIY",
-            "ChB2ZXJpZmljYXRpb25Db2RlGAMgASgJEhkKEW1lc3NhZ2VTZXNzaW9uVWlk",
-            "GAQgASgMIlkKGVNlbmRTZXNzaW9uTWVzc2FnZVJlcXVlc3QSGQoRbWVzc2Fn",
-            "ZVNlc3Npb25VaWQYASABKAwSDwoHY29tbWFuZBgCIAEoCRIQCgh1c2VybmFt",
-            "ZRgDIAEoCSJECilHZXRVc2VyQWNjb3VudHNGcm9tUGFydGlhbFVzZXJuYW1l",
-            "UmVxdWVzdBIXCg9wYXJ0aWFsVXNlcm5hbWUYASABKAkiTQoRR2xvYmFsVXNl",
-            "ckFjY291bnQSEAoIdXNlcm5hbWUYASABKAkSEgoKYWNjb3VudFVpZBgCIAEo",
-            "DBISCgpyZWdpb25OYW1lGAMgASgJImoKKkdldFVzZXJBY2NvdW50c0Zyb21Q",
-            "YXJ0aWFsVXNlcm5hbWVSZXNwb25zZRI8ChFnbG9iYWxVc2VyQWNjb3VudBgB",
-            "IAMoCzIhLkF1dGhlbnRpY2F0aW9uLkdsb2JhbFVzZXJBY2NvdW50IlAKGVNz",
-            "b1NlcnZpY2VQcm92aWRlclJlcXVlc3QSDAoEbmFtZRgBIAEoCRIVCg1jbGll",
-            "bnRWZXJzaW9uGAIgASgJEg4KBmxvY2FsZRgDIAEoCSJKChpTc29TZXJ2aWNl",
-            "UHJvdmlkZXJSZXNwb25zZRIMCgRuYW1lGAEgASgJEg0KBXNwVXJsGAIgASgJ",
-            "Eg8KB2lzQ2xvdWQYAyABKAgquQIKEVN1cHBvcnRlZExhbmd1YWdlEgsKB0VO",
-            "R0xJU0gQABIKCgZBUkFCSUMQARILCgdCUklUSVNIEAISCwoHQ0hJTkVTRRAD",
-            "EhUKEUNISU5FU0VfSE9OR19LT05HEAQSEgoOQ0hJTkVTRV9UQUlXQU4QBRIJ",
-            "CgVEVVRDSBAGEgoKBkZSRU5DSBAHEgoKBkdFUk1BThAIEgkKBUdSRUVLEAkS",
-            "CgoGSEVCUkVXEAoSCwoHSVRBTElBThALEgwKCEpBUEFORVNFEAwSCgoGS09S",
-            "RUFOEA0SCgoGUE9MSVNIEA4SDgoKUE9SVFVHVUVTRRAPEhUKEVBPUlRVR1VF",
-            "U0VfQlJBWklMEBASDAoIUk9NQU5JQU4QERILCgdSVVNTSUFOEBISCgoGU0xP",
-            "VkFLEBMSCwoHU1BBTklTSBAUKkUKCUxvZ2luVHlwZRIKCgZOT1JNQUwQABIH",
-            "CgNTU08QARIHCgNCSU8QAhINCglBTFRFUk5BVEUQAxILCgdPRkZMSU5FEAQq",
-            "cQoMRGV2aWNlU3RhdHVzEhkKFURFVklDRV9ORUVEU19BUFBST1ZBTBAAEg0K",
-            "CURFVklDRV9PSxABEhsKF0RFVklDRV9ESVNBQkxFRF9CWV9VU0VSEAISGgoW",
-            "REVWSUNFX0xPQ0tFRF9CWV9BRE1JThADKkEKDUxpY2Vuc2VTdGF0dXMSCQoF",
-            "T1RIRVIQABIKCgZBQ1RJVkUQARILCgdFWFBJUkVEEAISDAoIRElTQUJMRUQQ",
-            "Ayo3CgtBY2NvdW50VHlwZRIMCghDT05TVU1FUhAAEgoKBkZBTUlMWRABEg4K",
-            "CkVOVEVSUFJJU0UQAiqSAQoQU2Vzc2lvblRva2VuVHlwZRISCg5OT19SRVNU",
-            "UklDVElPThAAEhQKEEFDQ09VTlRfUkVDT1ZFUlkQARIRCg1TSEFSRV9BQ0NP",
-            "VU5UEAISDAoIUFVSQ0hBU0UQAxIMCghSRVNUUklDVBAEEhEKDUFDQ0VQVF9J",
-            "TlZJVEUQBRISCg5TVVBQT1JUX1NFUlZFUhAGKkcKB1ZlcnNpb24SEwoPaW52",
-            "YWxpZF92ZXJzaW9uEAASEwoPZGVmYXVsdF92ZXJzaW9uEAESEgoOc2Vjb25k",
-            "X3ZlcnNpb24QAio3Ch9NYXN0ZXJQYXNzd29yZFJlZW50cnlBY3Rpb25UeXBl",
-            "EgoKBlVOTUFTSxAAEggKBENPUFkQASpsCgtMb2dpbk1ldGhvZBIXChNJTlZB",
-            "TElEX0xPR0lOTUVUSE9EEAASFAoQRVhJU1RJTkdfQUNDT1VOVBABEg4KClNT",
-            "T19ET01BSU4QAhINCglBRlRFUl9TU08QAxIPCgtORVdfQUNDT1VOVBAEKscD",
-            "CgpMb2dpblN0YXRlEhYKEklOVkFMSURfTE9HSU5TVEFURRAAEg4KCkxPR0dF",
-            "RF9PVVQQARIcChhERVZJQ0VfQVBQUk9WQUxfUkVRVUlSRUQQAhIRCg1ERVZJ",
-            "Q0VfTE9DS0VEEAMSEgoOQUNDT1VOVF9MT0NLRUQQBBIZChVERVZJQ0VfQUND",
-            "T1VOVF9MT0NLRUQQBRILCgdVUEdSQURFEAYSEwoPTElDRU5TRV9FWFBJUkVE",
-            "EAcSEwoPUkVHSU9OX1JFRElSRUNUEAgSFgoSUkVESVJFQ1RfQ0xPVURfU1NP",
-            "EAkSFwoTUkVESVJFQ1RfT05TSVRFX1NTTxAKEhAKDFJFUVVJUkVTXzJGQRAM",
-            "EhYKElJFUVVJUkVTX0FVVEhfSEFTSBANEhUKEVJFUVVJUkVTX1VTRVJOQU1F",
-            "EA4SGQoVQUZURVJfQ0xPVURfU1NPX0xPR0lOEA8SHQoZUkVRVUlSRVNfQUND",
-            "T1VOVF9DUkVBVElPThAQEiYKIlJFUVVJUkVTX0RFVklDRV9FTkNSWVBURURf",
-            "REFUQV9LRVkQERIXChNMT0dJTl9UT0tFTl9FWFBJUkVEEBISDQoJTE9HR0VE",
-            "X0lOEGMqTQoURW5jcnlwdGVkRGF0YUtleVR5cGUSCgoGTk9fS0VZEAASGAoU",
-            "QllfREVWSUNFX1BVQkxJQ19LRVkQARIPCgtCWV9QQVNTV09SRBACKi0KDlBh",
-            "c3N3b3JkTWV0aG9kEgsKB0VOVEVSRUQQABIOCgpCSU9NRVRSSUNTEAEquQEK",
-            "EVR3b0ZhY3RvclB1c2hUeXBlEhQKEFRXT19GQV9QVVNIX05PTkUQABITCg9U",
-            "V09fRkFfUFVTSF9TTVMQARIWChJUV09fRkFfUFVTSF9LRUVQRVIQAhIYChRU",
-            "V09fRkFfUFVTSF9EVU9fUFVTSBADEhgKFFRXT19GQV9QVVNIX0RVT19URVhU",
-            "EAQSGAoUVFdPX0ZBX1BVU0hfRFVPX0NBTEwQBRITCg9UV09fRkFfUFVTSF9E",
-            "TkEQBirDAQoSVHdvRmFjdG9yVmFsdWVUeXBlEhQKEFRXT19GQV9DT0RFX05P",
-            "TkUQABIUChBUV09fRkFfQ09ERV9UT1RQEAESEwoPVFdPX0ZBX0NPREVfU01T",
-            "EAISEwoPVFdPX0ZBX0NPREVfRFVPEAMSEwoPVFdPX0ZBX0NPREVfUlNBEAQS",
-            "EwoPVFdPX0ZBX1JFU1BfVTJGEAUSGAoUVFdPX0ZBX1JFU1BfV0VCQVVUSE4Q",
-            "BhITCg9UV09fRkFfQ09ERV9ETkEQByrhAQoUVHdvRmFjdG9yQ2hhbm5lbFR5",
-            "cGUSEgoOVFdPX0ZBX0NUX05PTkUQABISCg5UV09fRkFfQ1RfVE9UUBABEhEK",
-            "DVRXT19GQV9DVF9TTVMQAhIRCg1UV09fRkFfQ1RfRFVPEAMSEQoNVFdPX0ZB",
-            "X0NUX1JTQRAEEhQKEFRXT19GQV9DVF9CQUNLVVAQBRIRCg1UV09fRkFfQ1Rf",
-            "VTJGEAYSFgoSVFdPX0ZBX0NUX1dFQkFVVEhOEAcSFAoQVFdPX0ZBX0NUX0tF",
-            "RVBFUhAIEhEKDVRXT19GQV9DVF9ETkEQCSqrAQoTVHdvRmFjdG9yRXhwaXJh",
-            "dGlvbhIaChZUV09fRkFfRVhQX0lNTUVESUFURUxZEAASGAoUVFdPX0ZBX0VY",
-            "UF81X01JTlVURVMQARIXChNUV09fRkFfRVhQXzEyX0hPVVJTEAISFwoTVFdP",
-            "X0ZBX0VYUF8yNF9IT1VSUxADEhYKElRXT19GQV9FWFBfMzBfREFZUxAEEhQK",
-            "EFRXT19GQV9FWFBfTkVWRVIQBSpACgtMaWNlbnNlVHlwZRIJCgVWQVVMVBAA",
-            "EggKBENIQVQQARILCgdTVE9SQUdFEAISDwoLQlJFQUNIV0FUQ0gQAyppCgtP",
-            "YmplY3RUeXBlcxIKCgZSRUNPUkQQABIWChJTSEFSRURfRk9MREVSX1VTRVIQ",
-            "ARIWChJTSEFSRURfRk9MREVSX1RFQU0QAhIPCgtVU0VSX0ZPTERFUhADEg0K",
-            "CVRFQU1fVVNFUhAEQioKGGNvbS5rZWVwZXJzZWN1cml0eS5wcm90b0IOQXV0",
-            "aGVudGljYXRpb25iBnByb3RvMw=="));
+            "b3JUb2tlbhgBIAEoDCJ+ChRBcHByb3ZlRGV2aWNlUmVxdWVzdBISCgphY2Nv",
+            "dW50VWlkGAEgASgMEhwKFGVuY3J5cHRlZERldmljZVRva2VuGAIgASgMEh4K",
+            "FmVuY3J5cHRlZERldmljZURhdGFLZXkYAyABKAwSFAoMZGVueUFwcHJvdmFs",
+            "GAQgASgIIkUKGkVudGVycHJpc2VVc2VyQWxpYXNSZXF1ZXN0EhgKEGVudGVy",
+            "cHJpc2VVc2VySWQYASABKAMSDQoFYWxpYXMYAiABKAkiJgoGRGV2aWNlEhwK",
+            "FGVuY3J5cHRlZERldmljZVRva2VuGAEgASgMIlwKHFJlZ2lzdGVyRGV2aWNl",
+            "RGF0YUtleVJlcXVlc3QSHAoUZW5jcnlwdGVkRGV2aWNlVG9rZW4YASABKAwS",
+            "HgoWZW5jcnlwdGVkRGV2aWNlRGF0YUtleRgCIAEoDCKJAQopVmFsaWRhdGVD",
+            "cmVhdGVVc2VyVmVyaWZpY2F0aW9uQ29kZVJlcXVlc3QSEAoIdXNlcm5hbWUY",
+            "ASABKAkSFQoNY2xpZW50VmVyc2lvbhgCIAEoCRIYChB2ZXJpZmljYXRpb25D",
+            "b2RlGAMgASgJEhkKEW1lc3NhZ2VTZXNzaW9uVWlkGAQgASgMIoUBCiVWYWxp",
+            "ZGF0ZURldmljZVZlcmlmaWNhdGlvbkNvZGVSZXF1ZXN0EhAKCHVzZXJuYW1l",
+            "GAEgASgJEhUKDWNsaWVudFZlcnNpb24YAiABKAkSGAoQdmVyaWZpY2F0aW9u",
+            "Q29kZRgDIAEoCRIZChFtZXNzYWdlU2Vzc2lvblVpZBgEIAEoDCJZChlTZW5k",
+            "U2Vzc2lvbk1lc3NhZ2VSZXF1ZXN0EhkKEW1lc3NhZ2VTZXNzaW9uVWlkGAEg",
+            "ASgMEg8KB2NvbW1hbmQYAiABKAkSEAoIdXNlcm5hbWUYAyABKAkiRAopR2V0",
+            "VXNlckFjY291bnRzRnJvbVBhcnRpYWxVc2VybmFtZVJlcXVlc3QSFwoPcGFy",
+            "dGlhbFVzZXJuYW1lGAEgASgJIk0KEUdsb2JhbFVzZXJBY2NvdW50EhAKCHVz",
+            "ZXJuYW1lGAEgASgJEhIKCmFjY291bnRVaWQYAiABKAwSEgoKcmVnaW9uTmFt",
+            "ZRgDIAEoCSJqCipHZXRVc2VyQWNjb3VudHNGcm9tUGFydGlhbFVzZXJuYW1l",
+            "UmVzcG9uc2USPAoRZ2xvYmFsVXNlckFjY291bnQYASADKAsyIS5BdXRoZW50",
+            "aWNhdGlvbi5HbG9iYWxVc2VyQWNjb3VudCJQChlTc29TZXJ2aWNlUHJvdmlk",
+            "ZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSFQoNY2xpZW50VmVyc2lvbhgCIAEo",
+            "CRIOCgZsb2NhbGUYAyABKAkiSgoaU3NvU2VydmljZVByb3ZpZGVyUmVzcG9u",
+            "c2USDAoEbmFtZRgBIAEoCRINCgVzcFVybBgCIAEoCRIPCgdpc0Nsb3VkGAMg",
+            "ASgIIjQKElVzZXJTZXR0aW5nUmVxdWVzdBIPCgdzZXR0aW5nGAEgASgJEg0K",
+            "BXZhbHVlGAIgASgJKrkCChFTdXBwb3J0ZWRMYW5ndWFnZRILCgdFTkdMSVNI",
+            "EAASCgoGQVJBQklDEAESCwoHQlJJVElTSBACEgsKB0NISU5FU0UQAxIVChFD",
+            "SElORVNFX0hPTkdfS09ORxAEEhIKDkNISU5FU0VfVEFJV0FOEAUSCQoFRFVU",
+            "Q0gQBhIKCgZGUkVOQ0gQBxIKCgZHRVJNQU4QCBIJCgVHUkVFSxAJEgoKBkhF",
+            "QlJFVxAKEgsKB0lUQUxJQU4QCxIMCghKQVBBTkVTRRAMEgoKBktPUkVBThAN",
+            "EgoKBlBPTElTSBAOEg4KClBPUlRVR1VFU0UQDxIVChFQT1JUVUdVRVNFX0JS",
+            "QVpJTBAQEgwKCFJPTUFOSUFOEBESCwoHUlVTU0lBThASEgoKBlNMT1ZBSxAT",
+            "EgsKB1NQQU5JU0gQFCpFCglMb2dpblR5cGUSCgoGTk9STUFMEAASBwoDU1NP",
+            "EAESBwoDQklPEAISDQoJQUxURVJOQVRFEAMSCwoHT0ZGTElORRAEKnEKDERl",
+            "dmljZVN0YXR1cxIZChVERVZJQ0VfTkVFRFNfQVBQUk9WQUwQABINCglERVZJ",
+            "Q0VfT0sQARIbChdERVZJQ0VfRElTQUJMRURfQllfVVNFUhACEhoKFkRFVklD",
+            "RV9MT0NLRURfQllfQURNSU4QAypBCg1MaWNlbnNlU3RhdHVzEgkKBU9USEVS",
+            "EAASCgoGQUNUSVZFEAESCwoHRVhQSVJFRBACEgwKCERJU0FCTEVEEAMqNwoL",
+            "QWNjb3VudFR5cGUSDAoIQ09OU1VNRVIQABIKCgZGQU1JTFkQARIOCgpFTlRF",
+            "UlBSSVNFEAIqkgEKEFNlc3Npb25Ub2tlblR5cGUSEgoOTk9fUkVTVFJJQ1RJ",
+            "T04QABIUChBBQ0NPVU5UX1JFQ09WRVJZEAESEQoNU0hBUkVfQUNDT1VOVBAC",
+            "EgwKCFBVUkNIQVNFEAMSDAoIUkVTVFJJQ1QQBBIRCg1BQ0NFUFRfSU5WSVRF",
+            "EAUSEgoOU1VQUE9SVF9TRVJWRVIQBipHCgdWZXJzaW9uEhMKD2ludmFsaWRf",
+            "dmVyc2lvbhAAEhMKD2RlZmF1bHRfdmVyc2lvbhABEhIKDnNlY29uZF92ZXJz",
+            "aW9uEAIqNwofTWFzdGVyUGFzc3dvcmRSZWVudHJ5QWN0aW9uVHlwZRIKCgZV",
+            "Tk1BU0sQABIICgRDT1BZEAEqbAoLTG9naW5NZXRob2QSFwoTSU5WQUxJRF9M",
+            "T0dJTk1FVEhPRBAAEhQKEEVYSVNUSU5HX0FDQ09VTlQQARIOCgpTU09fRE9N",
+            "QUlOEAISDQoJQUZURVJfU1NPEAMSDwoLTkVXX0FDQ09VTlQQBCrHAwoKTG9n",
+            "aW5TdGF0ZRIWChJJTlZBTElEX0xPR0lOU1RBVEUQABIOCgpMT0dHRURfT1VU",
+            "EAESHAoYREVWSUNFX0FQUFJPVkFMX1JFUVVJUkVEEAISEQoNREVWSUNFX0xP",
+            "Q0tFRBADEhIKDkFDQ09VTlRfTE9DS0VEEAQSGQoVREVWSUNFX0FDQ09VTlRf",
+            "TE9DS0VEEAUSCwoHVVBHUkFERRAGEhMKD0xJQ0VOU0VfRVhQSVJFRBAHEhMK",
+            "D1JFR0lPTl9SRURJUkVDVBAIEhYKElJFRElSRUNUX0NMT1VEX1NTTxAJEhcK",
+            "E1JFRElSRUNUX09OU0lURV9TU08QChIQCgxSRVFVSVJFU18yRkEQDBIWChJS",
+            "RVFVSVJFU19BVVRIX0hBU0gQDRIVChFSRVFVSVJFU19VU0VSTkFNRRAOEhkK",
+            "FUFGVEVSX0NMT1VEX1NTT19MT0dJThAPEh0KGVJFUVVJUkVTX0FDQ09VTlRf",
+            "Q1JFQVRJT04QEBImCiJSRVFVSVJFU19ERVZJQ0VfRU5DUllQVEVEX0RBVEFf",
+            "S0VZEBESFwoTTE9HSU5fVE9LRU5fRVhQSVJFRBASEg0KCUxPR0dFRF9JThBj",
+            "Kk0KFEVuY3J5cHRlZERhdGFLZXlUeXBlEgoKBk5PX0tFWRAAEhgKFEJZX0RF",
+            "VklDRV9QVUJMSUNfS0VZEAESDwoLQllfUEFTU1dPUkQQAiotCg5QYXNzd29y",
+            "ZE1ldGhvZBILCgdFTlRFUkVEEAASDgoKQklPTUVUUklDUxABKrkBChFUd29G",
+            "YWN0b3JQdXNoVHlwZRIUChBUV09fRkFfUFVTSF9OT05FEAASEwoPVFdPX0ZB",
+            "X1BVU0hfU01TEAESFgoSVFdPX0ZBX1BVU0hfS0VFUEVSEAISGAoUVFdPX0ZB",
+            "X1BVU0hfRFVPX1BVU0gQAxIYChRUV09fRkFfUFVTSF9EVU9fVEVYVBAEEhgK",
+            "FFRXT19GQV9QVVNIX0RVT19DQUxMEAUSEwoPVFdPX0ZBX1BVU0hfRE5BEAYq",
+            "wwEKElR3b0ZhY3RvclZhbHVlVHlwZRIUChBUV09fRkFfQ09ERV9OT05FEAAS",
+            "FAoQVFdPX0ZBX0NPREVfVE9UUBABEhMKD1RXT19GQV9DT0RFX1NNUxACEhMK",
+            "D1RXT19GQV9DT0RFX0RVTxADEhMKD1RXT19GQV9DT0RFX1JTQRAEEhMKD1RX",
+            "T19GQV9SRVNQX1UyRhAFEhgKFFRXT19GQV9SRVNQX1dFQkFVVEhOEAYSEwoP",
+            "VFdPX0ZBX0NPREVfRE5BEAcq4QEKFFR3b0ZhY3RvckNoYW5uZWxUeXBlEhIK",
+            "DlRXT19GQV9DVF9OT05FEAASEgoOVFdPX0ZBX0NUX1RPVFAQARIRCg1UV09f",
+            "RkFfQ1RfU01TEAISEQoNVFdPX0ZBX0NUX0RVTxADEhEKDVRXT19GQV9DVF9S",
+            "U0EQBBIUChBUV09fRkFfQ1RfQkFDS1VQEAUSEQoNVFdPX0ZBX0NUX1UyRhAG",
+            "EhYKElRXT19GQV9DVF9XRUJBVVRIThAHEhQKEFRXT19GQV9DVF9LRUVQRVIQ",
+            "CBIRCg1UV09fRkFfQ1RfRE5BEAkqqwEKE1R3b0ZhY3RvckV4cGlyYXRpb24S",
+            "GgoWVFdPX0ZBX0VYUF9JTU1FRElBVEVMWRAAEhgKFFRXT19GQV9FWFBfNV9N",
+            "SU5VVEVTEAESFwoTVFdPX0ZBX0VYUF8xMl9IT1VSUxACEhcKE1RXT19GQV9F",
+            "WFBfMjRfSE9VUlMQAxIWChJUV09fRkFfRVhQXzMwX0RBWVMQBBIUChBUV09f",
+            "RkFfRVhQX05FVkVSEAUqQAoLTGljZW5zZVR5cGUSCQoFVkFVTFQQABIICgRD",
+            "SEFUEAESCwoHU1RPUkFHRRACEg8KC0JSRUFDSFdBVENIEAMqaQoLT2JqZWN0",
+            "VHlwZXMSCgoGUkVDT1JEEAASFgoSU0hBUkVEX0ZPTERFUl9VU0VSEAESFgoS",
+            "U0hBUkVEX0ZPTERFUl9URUFNEAISDwoLVVNFUl9GT0xERVIQAxINCglURUFN",
+            "X1VTRVIQBEIqChhjb20ua2VlcGVyc2VjdXJpdHkucHJvdG9CDkF1dGhlbnRp",
+            "Y2F0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Enterprise.EnterpriseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Authentication.SupportedLanguage), typeof(global::Authentication.LoginType), typeof(global::Authentication.DeviceStatus), typeof(global::Authentication.LicenseStatus), typeof(global::Authentication.AccountType), typeof(global::Authentication.SessionTokenType), typeof(global::Authentication.Version), typeof(global::Authentication.MasterPasswordReentryActionType), typeof(global::Authentication.LoginMethod), typeof(global::Authentication.LoginState), typeof(global::Authentication.EncryptedDataKeyType), typeof(global::Authentication.PasswordMethod), typeof(global::Authentication.TwoFactorPushType), typeof(global::Authentication.TwoFactorValueType), typeof(global::Authentication.TwoFactorChannelType), typeof(global::Authentication.TwoFactorExpiration), typeof(global::Authentication.LicenseType), typeof(global::Authentication.ObjectTypes), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -359,8 +359,7 @@ namespace Authentication {
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.DeviceVerificationRequest), global::Authentication.DeviceVerificationRequest.Parser, new[]{ "EncryptedDeviceToken", "Username", "VerificationChannel", "MessageSessionUid", "ClientVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.DeviceApprovalRequest), global::Authentication.DeviceApprovalRequest.Parser, new[]{ "Email", "TwoFactorChannel", "ClientVersion", "Locale", "EncryptedDeviceToken", "TotpCode", "DeviceIp", "DeviceTokenExpireDays" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.DeviceApprovalResponse), global::Authentication.DeviceApprovalResponse.Parser, new[]{ "EncryptedTwoFactorToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.DeviceApproveStatus), global::Authentication.DeviceApproveStatus.Parser, new[]{ "Approved", "EncryptedDeviceToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.DeviceApproveStatusRequest), global::Authentication.DeviceApproveStatusRequest.Parser, new[]{ "AccountUid", "DeviceApproveStatus" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.ApproveDeviceRequest), global::Authentication.ApproveDeviceRequest.Parser, new[]{ "AccountUid", "EncryptedDeviceToken", "EncryptedDeviceDataKey", "DenyApproval" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.EnterpriseUserAliasRequest), global::Authentication.EnterpriseUserAliasRequest.Parser, new[]{ "EnterpriseUserId", "Alias" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.Device), global::Authentication.Device.Parser, new[]{ "EncryptedDeviceToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.RegisterDeviceDataKeyRequest), global::Authentication.RegisterDeviceDataKeyRequest.Parser, new[]{ "EncryptedDeviceToken", "EncryptedDeviceDataKey" }, null, null, null, null),
@@ -371,7 +370,8 @@ namespace Authentication {
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.GlobalUserAccount), global::Authentication.GlobalUserAccount.Parser, new[]{ "Username", "AccountUid", "RegionName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.GetUserAccountsFromPartialUsernameResponse), global::Authentication.GetUserAccountsFromPartialUsernameResponse.Parser, new[]{ "GlobalUserAccount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.SsoServiceProviderRequest), global::Authentication.SsoServiceProviderRequest.Parser, new[]{ "Name", "ClientVersion", "Locale" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.SsoServiceProviderResponse), global::Authentication.SsoServiceProviderResponse.Parser, new[]{ "Name", "SpUrl", "IsCloud" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.SsoServiceProviderResponse), global::Authentication.SsoServiceProviderResponse.Parser, new[]{ "Name", "SpUrl", "IsCloud" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Authentication.UserSettingRequest), global::Authentication.UserSettingRequest.Parser, new[]{ "Setting", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -13920,11 +13920,11 @@ namespace Authentication {
 
   }
 
-  public sealed partial class DeviceApproveStatus : pb::IMessage<DeviceApproveStatus> {
-    private static readonly pb::MessageParser<DeviceApproveStatus> _parser = new pb::MessageParser<DeviceApproveStatus>(() => new DeviceApproveStatus());
+  public sealed partial class ApproveDeviceRequest : pb::IMessage<ApproveDeviceRequest> {
+    private static readonly pb::MessageParser<ApproveDeviceRequest> _parser = new pb::MessageParser<ApproveDeviceRequest>(() => new ApproveDeviceRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeviceApproveStatus> Parser { get { return _parser; } }
+    public static pb::MessageParser<ApproveDeviceRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -13937,32 +13937,34 @@ namespace Authentication {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatus() {
+    public ApproveDeviceRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatus(DeviceApproveStatus other) : this() {
-      approved_ = other.approved_;
+    public ApproveDeviceRequest(ApproveDeviceRequest other) : this() {
+      accountUid_ = other.accountUid_;
       encryptedDeviceToken_ = other.encryptedDeviceToken_;
+      encryptedDeviceDataKey_ = other.encryptedDeviceDataKey_;
+      denyApproval_ = other.denyApproval_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatus Clone() {
-      return new DeviceApproveStatus(this);
+    public ApproveDeviceRequest Clone() {
+      return new ApproveDeviceRequest(this);
     }
 
-    /// <summary>Field number for the "approved" field.</summary>
-    public const int ApprovedFieldNumber = 1;
-    private bool approved_;
+    /// <summary>Field number for the "accountUid" field.</summary>
+    public const int AccountUidFieldNumber = 1;
+    private pb::ByteString accountUid_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Approved {
-      get { return approved_; }
+    public pb::ByteString AccountUid {
+      get { return accountUid_; }
       set {
-        approved_ = value;
+        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -13977,169 +13979,38 @@ namespace Authentication {
       }
     }
 
+    /// <summary>Field number for the "encryptedDeviceDataKey" field.</summary>
+    public const int EncryptedDeviceDataKeyFieldNumber = 3;
+    private pb::ByteString encryptedDeviceDataKey_ = pb::ByteString.Empty;
+    /// <summary>
+    /// required for cloud sso
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as DeviceApproveStatus);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeviceApproveStatus other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Approved != other.Approved) return false;
-      if (EncryptedDeviceToken != other.EncryptedDeviceToken) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Approved != false) hash ^= Approved.GetHashCode();
-      if (EncryptedDeviceToken.Length != 0) hash ^= EncryptedDeviceToken.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Approved != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Approved);
-      }
-      if (EncryptedDeviceToken.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteBytes(EncryptedDeviceToken);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Approved != false) {
-        size += 1 + 1;
-      }
-      if (EncryptedDeviceToken.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptedDeviceToken);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeviceApproveStatus other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Approved != false) {
-        Approved = other.Approved;
-      }
-      if (other.EncryptedDeviceToken.Length != 0) {
-        EncryptedDeviceToken = other.EncryptedDeviceToken;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            Approved = input.ReadBool();
-            break;
-          }
-          case 18: {
-            EncryptedDeviceToken = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class DeviceApproveStatusRequest : pb::IMessage<DeviceApproveStatusRequest> {
-    private static readonly pb::MessageParser<DeviceApproveStatusRequest> _parser = new pb::MessageParser<DeviceApproveStatusRequest>(() => new DeviceApproveStatusRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<DeviceApproveStatusRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[65]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatusRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatusRequest(DeviceApproveStatusRequest other) : this() {
-      accountUid_ = other.accountUid_;
-      deviceApproveStatus_ = other.deviceApproveStatus_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DeviceApproveStatusRequest Clone() {
-      return new DeviceApproveStatusRequest(this);
-    }
-
-    /// <summary>Field number for the "accountUid" field.</summary>
-    public const int AccountUidFieldNumber = 1;
-    private pb::ByteString accountUid_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString AccountUid {
-      get { return accountUid_; }
+    public pb::ByteString EncryptedDeviceDataKey {
+      get { return encryptedDeviceDataKey_; }
       set {
-        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        encryptedDeviceDataKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "deviceApproveStatus" field.</summary>
-    public const int DeviceApproveStatusFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Authentication.DeviceApproveStatus> _repeated_deviceApproveStatus_codec
-        = pb::FieldCodec.ForMessage(18, global::Authentication.DeviceApproveStatus.Parser);
-    private readonly pbc::RepeatedField<global::Authentication.DeviceApproveStatus> deviceApproveStatus_ = new pbc::RepeatedField<global::Authentication.DeviceApproveStatus>();
+    /// <summary>Field number for the "denyApproval" field.</summary>
+    public const int DenyApprovalFieldNumber = 4;
+    private bool denyApproval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Authentication.DeviceApproveStatus> DeviceApproveStatus {
-      get { return deviceApproveStatus_; }
+    public bool DenyApproval {
+      get { return denyApproval_; }
+      set {
+        denyApproval_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as DeviceApproveStatusRequest);
+      return Equals(other as ApproveDeviceRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DeviceApproveStatusRequest other) {
+    public bool Equals(ApproveDeviceRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -14147,7 +14018,9 @@ namespace Authentication {
         return true;
       }
       if (AccountUid != other.AccountUid) return false;
-      if(!deviceApproveStatus_.Equals(other.deviceApproveStatus_)) return false;
+      if (EncryptedDeviceToken != other.EncryptedDeviceToken) return false;
+      if (EncryptedDeviceDataKey != other.EncryptedDeviceDataKey) return false;
+      if (DenyApproval != other.DenyApproval) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -14155,7 +14028,9 @@ namespace Authentication {
     public override int GetHashCode() {
       int hash = 1;
       if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
-      hash ^= deviceApproveStatus_.GetHashCode();
+      if (EncryptedDeviceToken.Length != 0) hash ^= EncryptedDeviceToken.GetHashCode();
+      if (EncryptedDeviceDataKey.Length != 0) hash ^= EncryptedDeviceDataKey.GetHashCode();
+      if (DenyApproval != false) hash ^= DenyApproval.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -14173,7 +14048,18 @@ namespace Authentication {
         output.WriteRawTag(10);
         output.WriteBytes(AccountUid);
       }
-      deviceApproveStatus_.WriteTo(output, _repeated_deviceApproveStatus_codec);
+      if (EncryptedDeviceToken.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(EncryptedDeviceToken);
+      }
+      if (EncryptedDeviceDataKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(EncryptedDeviceDataKey);
+      }
+      if (DenyApproval != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(DenyApproval);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -14185,7 +14071,15 @@ namespace Authentication {
       if (AccountUid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(AccountUid);
       }
-      size += deviceApproveStatus_.CalculateSize(_repeated_deviceApproveStatus_codec);
+      if (EncryptedDeviceToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptedDeviceToken);
+      }
+      if (EncryptedDeviceDataKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(EncryptedDeviceDataKey);
+      }
+      if (DenyApproval != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -14193,14 +14087,22 @@ namespace Authentication {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DeviceApproveStatusRequest other) {
+    public void MergeFrom(ApproveDeviceRequest other) {
       if (other == null) {
         return;
       }
       if (other.AccountUid.Length != 0) {
         AccountUid = other.AccountUid;
       }
-      deviceApproveStatus_.Add(other.deviceApproveStatus_);
+      if (other.EncryptedDeviceToken.Length != 0) {
+        EncryptedDeviceToken = other.EncryptedDeviceToken;
+      }
+      if (other.EncryptedDeviceDataKey.Length != 0) {
+        EncryptedDeviceDataKey = other.EncryptedDeviceDataKey;
+      }
+      if (other.DenyApproval != false) {
+        DenyApproval = other.DenyApproval;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -14217,7 +14119,15 @@ namespace Authentication {
             break;
           }
           case 18: {
-            deviceApproveStatus_.AddEntriesFrom(input, _repeated_deviceApproveStatus_codec);
+            EncryptedDeviceToken = input.ReadBytes();
+            break;
+          }
+          case 26: {
+            EncryptedDeviceDataKey = input.ReadBytes();
+            break;
+          }
+          case 32: {
+            DenyApproval = input.ReadBool();
             break;
           }
         }
@@ -14234,7 +14144,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[66]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14391,7 +14301,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[67]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[66]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14520,7 +14430,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[68]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[67]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14677,7 +14587,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[69]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[68]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14890,7 +14800,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[70]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[69]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15103,7 +15013,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[71]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[70]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15288,7 +15198,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[72]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[71]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15417,7 +15327,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[73]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[72]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15602,7 +15512,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[74]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[73]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15727,7 +15637,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[75]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[74]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15922,7 +15832,7 @@ namespace Authentication {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[76]; }
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[75]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16094,6 +16004,163 @@ namespace Authentication {
           }
           case 24: {
             IsCloud = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UserSettingRequest : pb::IMessage<UserSettingRequest> {
+    private static readonly pb::MessageParser<UserSettingRequest> _parser = new pb::MessageParser<UserSettingRequest>(() => new UserSettingRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserSettingRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Authentication.APIRequestReflection.Descriptor.MessageTypes[76]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserSettingRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserSettingRequest(UserSettingRequest other) : this() {
+      setting_ = other.setting_;
+      value_ = other.value_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserSettingRequest Clone() {
+      return new UserSettingRequest(this);
+    }
+
+    /// <summary>Field number for the "setting" field.</summary>
+    public const int SettingFieldNumber = 1;
+    private string setting_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Setting {
+      get { return setting_; }
+      set {
+        setting_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 2;
+    private string value_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Value {
+      get { return value_; }
+      set {
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserSettingRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserSettingRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Setting != other.Setting) return false;
+      if (Value != other.Value) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Setting.Length != 0) hash ^= Setting.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Setting.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Setting);
+      }
+      if (Value.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Value);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Setting.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Setting);
+      }
+      if (Value.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserSettingRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Setting.Length != 0) {
+        Setting = other.Setting;
+      }
+      if (other.Value.Length != 0) {
+        Value = other.Value;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Setting = input.ReadString();
+            break;
+          }
+          case 18: {
+            Value = input.ReadString();
             break;
           }
         }

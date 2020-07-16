@@ -258,15 +258,15 @@ namespace KeeperSecurity.Sdk
                         SummaryVersion = 1
                     };
                     var rs = await this.ExecuteAuthRest<AccountSummaryRequest, AccountSummaryElements>("login/account_summary", rq);
-                    if (!string.IsNullOrEmpty(rs.ClientKey))
+                    if (rs.ClientKey?.Length > 0)
                     {
-                        authContext.ClientKey = CryptoUtils.DecryptAesV1(rs.ClientKey.Base64UrlDecode(), authContext.DataKey);
+                        authContext.ClientKey = CryptoUtils.DecryptAesV1(rs.ClientKey.ToByteArray(), authContext.DataKey);
                     }
 
-                    if (!string.IsNullOrEmpty(rs.KeysInfo?.EncryptedPrivateKey))
+                    if (rs.KeysInfo?.EncryptedPrivateKey?.Length > 0)
                     {
                         var privateKeyData =
-                            CryptoUtils.DecryptAesV1(rs.KeysInfo.EncryptedPrivateKey.Base64UrlDecode(), authContext.DataKey);
+                            CryptoUtils.DecryptAesV1(rs.KeysInfo.EncryptedPrivateKey.ToByteArray(), authContext.DataKey);
                         authContext.PrivateKey = CryptoUtils.LoadPrivateKey(privateKeyData);
                     }
                 }

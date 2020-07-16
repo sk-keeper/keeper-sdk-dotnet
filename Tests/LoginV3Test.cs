@@ -529,12 +529,12 @@ namespace Tests
             var device = _vaultEnv.KInfoDevices.First(x => auth.DeviceToken.SequenceEqual(x.Token));
             return new AccountSummaryElements
             {
-                ClientKey = CryptoUtils.EncryptAesV1(_vaultEnv.ClientKey, _vaultEnv.DataKey).Base64UrlEncode(),
+                ClientKey = ByteString.CopyFrom(CryptoUtils.EncryptAesV1(_vaultEnv.ClientKey, _vaultEnv.DataKey)),
                 IsEnterpriseAdmin = false,
                 KeysInfo = new KeysInfo
                 {
-                    EncryptionParams = _vaultEnv.EncryptionParams,
-                    EncryptedPrivateKey = _vaultEnv.EncryptedPrivateKey,
+                    EncryptionParams = ByteString.CopyFrom(_vaultEnv.EncryptionParams.Base64UrlDecode()),
+                    EncryptedPrivateKey = ByteString.CopyFrom(_vaultEnv.EncryptedPrivateKey.Base64UrlDecode()),
                 },
                 Devices =
                 {

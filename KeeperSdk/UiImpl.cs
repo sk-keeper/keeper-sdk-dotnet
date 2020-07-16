@@ -15,7 +15,7 @@ namespace KeeperSecurity.Sdk.UI
         public GetDataKeyActionDelegate InvokeGetDataKeyAction { get; internal set; }
     }
 
-    public class DeviceApprovalEmailResend : IDeviceApprovalPushInfo
+    public class DeviceApprovalEmailResend : IDeviceApprovalPushInfo, IDeviceApprovalOtpInfo
     {
         public DeviceApprovalChannel Channel { get; }
 
@@ -25,6 +25,7 @@ namespace KeeperSecurity.Sdk.UI
         }
 
         public DeviceApprovalPushActionDelegate InvokeDeviceApprovalPushAction { get; internal set; }
+        public DeviceApprovalOtpDelegate InvokeDeviceApprovalOtpAction { get; internal set; }
     }
 
     public class DeviceApprovalKeeperPushAction : IDeviceApprovalPushInfo
@@ -160,6 +161,7 @@ namespace KeeperSecurity.Sdk.UI
             {TwoFactorPushAction.DuoVoiceCall, "duo_call"},
             {TwoFactorPushAction.TextMessage, "sms"},
             {TwoFactorPushAction.KeeperPush, "dna"},
+            {TwoFactorPushAction.KeeperPush, "email"},
         };
 
         /// <summary>

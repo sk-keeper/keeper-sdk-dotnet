@@ -87,6 +87,8 @@ namespace KeeperSecurity.Sdk
                 auth.PasswordQueue.Enqueue(p);
             }
 
+            auth.DeviceToken = null;
+
             var userConf = auth.Storage.Users.Get(auth.Username);
             var deviceToken = userConf?.DeviceToken;
             if (!string.IsNullOrEmpty(deviceToken))
@@ -207,6 +209,22 @@ namespace KeeperSecurity.Sdk
 #endif
             await auth.Endpoint.ExecuteRest("authentication/request_device_verification",
                 new ApiRequestPayload {Payload = request.ToByteString()});
+        }
+
+        internal static async Task ValidateDeviceVerificationCode(this AuthV3 auth, string code)
+        {
+            var request = new ValidateDeviceVerificationCodeRequest
+            {
+                Username = auth.Username,
+                ClientVersion = auth.Endpoint.ClientVersion,
+                MessageSessionUid = ByteString.CopyFrom(auth.MessageSessionUid),
+                VerificationCode = code
+            };
+#if DEBUG
+            Debug.WriteLine($"REST Request: endpoint \"validate_device_verification_code\": {request}");
+#endif
+            await auth.Endpoint.ExecuteRest("authentication/validate_device_verification_code",
+                new ApiRequestPayload { Payload = request.ToByteString() });
         }
 
         private static async Task<AuthContextV3> ExecuteStartLogin(this AuthV3 auth, StartLoginRequest request)
@@ -331,7 +349,7 @@ namespace KeeperSecurity.Sdk
             throw new KeeperStartLoginException(response.LoginState, response.Message);
         }
 
-        private static async Task<AuthContextV3> ResumeLogin(this AuthV3 auth, ByteString loginToken)
+        private static async Task<AuthContextV3> ResumeLogin(this AuthV3 auth, ByteString loginToken, LoginMethod method = LoginMethod.ExistingAccount)
         {
             var request = new StartLoginRequest
             {
@@ -340,6 +358,7 @@ namespace KeeperSecurity.Sdk
                 EncryptedDeviceToken = ByteString.CopyFrom(auth.DeviceToken),
                 MessageSessionUid = ByteString.CopyFrom(auth.MessageSessionUid),
                 Username = auth.Username,
+                LoginMethod = method
             };
             return await auth.ExecuteStartLogin(request);
         }
@@ -350,7 +369,7 @@ namespace KeeperSecurity.Sdk
             while (true)
             {
                 attempt++;
-                if (auth.DeviceToken == null)
+                if (auth.DeviceToken == null || auth.DeviceKey == null)
                 {
                     auth.DeviceKey = null;
                     auth.CloneCode = null;
@@ -673,7 +692,22 @@ namespace KeeperSecurity.Sdk
                         Debug.WriteLine(e);
                         return false;
                     }
+                },
+                InvokeDeviceApprovalOtpAction = async (code, duration) =>
+                {
+                    try
+                    {
+
+                        await auth.ValidateDeviceVerificationCode(code);
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e);
+                        return false;
+                    }
                 }
+                
             };
             IDeviceApprovalChannelInfo push = new DeviceApprovalKeeperPushAction
             {
@@ -1062,19 +1096,18 @@ namespace KeeperSecurity.Sdk
                     var tokenStr = userTask.Result;
                     var token = JsonUtils.ParseJson<SsoToken>(Encoding.UTF8.GetBytes(tokenStr));
                     var pk = CryptoUtils.LoadPrivateKey(privateKey);
-
-                    foreach (var pwd in new[] {token.Password, token.NewPassword})
+                    if (!string.IsNullOrEmpty(token.Password))
                     {
-                        if (string.IsNullOrEmpty(pwd)) continue;
-                        var pwdBytes = CryptoUtils.DecryptRsa(pwd.Base64UrlDecode(), pk);
-                        try
-                        {
-                            return await auth.ExecuteValidateAuthHash(response.EncryptedLoginToken, Encoding.UTF8.GetString(pwdBytes), saltInfo);
-                        }
-                        catch (KeeperAuthFailed)
-                        {
-                        }
+                        var password = Encoding.UTF8.GetString(CryptoUtils.DecryptRsa(token.Password.Base64UrlDecode(), pk));
+                        auth.PasswordQueue.Enqueue(password);
                     }
+                    if (!string.IsNullOrEmpty(token.NewPassword))
+                    {
+                        var password = Encoding.UTF8.GetString(CryptoUtils.DecryptRsa(token.NewPassword.Base64UrlDecode(), pk));
+                        auth.PasswordQueue.Enqueue(token.NewPassword);
+                    }
+
+                    return await auth.ResumeLogin(response.EncryptedLoginToken, LoginMethod.AfterSso);
                 }
             }
 
@@ -1177,6 +1210,11 @@ namespace KeeperSecurity.Sdk
                 if (string.CompareOrdinal(message.message, "device_approved") == 0)
                 {
                     completeTask.TrySetResult(message.approved);
+                    return true;
+                }
+                if (string.CompareOrdinal(message.command, "device_verified") == 0)
+                {
+                    completeTask.TrySetResult(true);
                     return true;
                 }
                 return false;

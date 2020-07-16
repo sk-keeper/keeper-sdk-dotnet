@@ -136,6 +136,7 @@ namespace KeeperSecurity.Sdk.UI
         DuoVoiceCall,
         TextMessage,
         KeeperPush,
+        Email,
     }
 
     public interface IHttpProxyCredentialUI

@@ -9,7 +9,6 @@ using Authentication;
 using CommandLine;
 using Google.Protobuf;
 using KeeperSecurity.Sdk;
-using Setting;
 
 namespace Commander
 {
@@ -133,7 +132,14 @@ namespace Commander
             if (string.Compare(evt.notificationEvent, "device_approval_request", StringComparison.InvariantCultureIgnoreCase) == 0)
             {
                 _accountSummary = null;
-                Console.WriteLine("New notification arrived.");
+                if (!string.IsNullOrEmpty(evt.encryptedDeviceToken))
+                {
+                    Console.WriteLine($"New notification arrived for Device ID: {TokenToString(evt.encryptedDeviceToken.Base64UrlDecode())}");
+                }
+                else
+                {
+                    Console.WriteLine("New notification arrived.");
+                }
             }
 
             return false;
@@ -623,7 +629,7 @@ namespace Commander
         private async Task DeviceCommand(OtherDevicesOptions arguments)
         {
             if (!(_auth.AuthContext is AuthContextV3 contextV3)) return;
-            
+
             if (_accountSummary == null)
             {
                 _accountSummary = await _auth.LoadAccountSummary();
@@ -637,7 +643,7 @@ namespace Commander
 
             var devices = _accountSummary.Devices
                 .Where(x => !x.EncryptedDeviceToken.SequenceEqual(contextV3.DeviceToken))
-                .OrderBy(x => (int)x.DeviceStatus)
+                .OrderBy(x => (int) x.DeviceStatus)
                 .ToArray();
 
             if (devices.Length == 0)
@@ -652,17 +658,19 @@ namespace Commander
                 {
                     DumpRowNo = true
                 };
-                tab.AddHeader(new[] { "Device Name", "Client", "ID", "Status", "Data Key" });
+                tab.AddHeader(new[] {"Device Name", "Client", "ID", "Status", "Data Key"});
                 foreach (var device in devices)
                 {
-                    tab.AddRow(new[] { 
-                        device.DeviceName, 
-                        device.ClientVersion, 
-                        TokenToString(device.EncryptedDeviceToken.ToByteArray()), 
+                    tab.AddRow(new[]
+                    {
+                        device.DeviceName,
+                        device.ClientVersion,
+                        TokenToString(device.EncryptedDeviceToken.ToByteArray()),
                         DeviceStatusToString(device.DeviceStatus),
-                        device.EncryptedDataKey.Length > 0 ? "Yes": "No"
+                        device.EncryptedDataKey.Length > 0 ? "Yes" : "No"
                     });
                 }
+
                 Console.WriteLine();
                 tab.Dump();
                 return;
@@ -697,26 +705,20 @@ namespace Commander
                     return;
                 }
 
-                if (_accountSummary.Settings.SsoUser && !isDecline)
+                foreach (var device in toApprove)
                 {
-                    foreach (var device in toApprove)
+                    var deviceApprove = new ApproveDeviceRequest
                     {
-                        await _auth.RegisterDataKeyForDevice(device);
-                    }
-                }
-                else
-                {
-                    var deviceApprove = new DeviceApproveStatusRequest
-                    {
-                        AccountUid = ByteString.CopyFrom(contextV3.AccountUid)
+                        AccountUid = ByteString.CopyFrom(contextV3.AccountUid),
+                        EncryptedDeviceToken = device.EncryptedDeviceToken,
+                        DenyApproval = isDecline
                     };
-                    foreach (var device in toApprove)
+                    if (_accountSummary.Settings.SsoUser && !isDecline)
                     {
-                        deviceApprove.DeviceApproveStatus.Add(new DeviceApproveStatus
-                        {
-                            Approved = !isDecline,
-                            EncryptedDeviceToken = device.EncryptedDeviceToken,
-                        });
+                        var publicKeyBytes = device.DevicePublicKey.ToByteArray();
+                        var publicKey = CryptoUtils.LoadPublicEcKey(publicKeyBytes);
+                        var encryptedDataKey = CryptoUtils.EncryptEc(_auth.AuthContext.DataKey, publicKey);
+                        deviceApprove.EncryptedDeviceDataKey = ByteString.CopyFrom(encryptedDataKey);
                     }
 
                     await _auth.ExecuteAuthRest("authentication/approve_device", deviceApprove);
