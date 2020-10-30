@@ -215,7 +215,7 @@ namespace Sample
             await auth.Login(username);
             if (auth.IsAuthenticated())
             {
-                var vault = new Vault(auth);
+                var vault = new VaultOnline(auth);
                 Console.WriteLine("\nRetrieving records...");
                 await vault.SyncDown();
 

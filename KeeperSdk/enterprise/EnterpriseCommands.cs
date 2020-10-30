@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using KeeperSecurity.Sdk;
+﻿//  _  __
+// | |/ /___ ___ _ __  ___ _ _ ®
+// | ' </ -_) -_) '_ \/ -_) '_|
+// |_|\_\___\___| .__/\___|_|
+//              |_|
+//
+// Keeper SDK
+// Copyright 2020 Keeper Security Inc.
+// Contact: ops@keepersecurity.com
+//
 
-namespace Commander
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace KeeperSecurity.Sdk
 {
     [DataContract]
-    public class EnterpriseDataCommand : AuthenticatedCommand
+    public class GetEnterpriseDataCommand : AuthenticatedCommand
     {
-        public EnterpriseDataCommand() : base("get_enterprise_data") { }
+        public GetEnterpriseDataCommand() : base("get_enterprise_data") { }
 
         [DataMember(Name = "include", EmitDefaultValue = false)]
         public string[] include;
@@ -28,21 +34,20 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseNode : IEncryptedData, IDisplayName
+    public class GetEnterpriseNode : IEncryptedData
     {
         [DataMember(Name = "node_id")]
         public long NodeId { get; set; }
 
         [DataMember(Name = "parent_id")]
-        public long ParentId { get; set; }
+        public long? ParentId { get; set; }
 
         [DataMember(Name = "encrypted_data", EmitDefaultValue = false)]
         public string EncryptedData { get; set; }
-        public string DisplayName { get; set; }
     }
 
     [DataContract]
-    public class EnterpriseRole : IEncryptedData
+    public class GetEnterpriseRole : IEncryptedData
     {
         [DataMember(Name = "role_id")]
         public long RoleId { get; set; }
@@ -61,7 +66,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseRoleUser
+    public class GetEnterpriseRoleUser
     {
         [DataMember(Name = "role_id")]
         public long RoleId { get; set; }
@@ -71,7 +76,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseRoleKey
+    public class GetEnterpriseRoleKey
     {
         [DataMember(Name = "role_id")]
         public long RoleId { get; set; }
@@ -82,7 +87,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseRoleKey2
+    public class GetEnterpriseRoleKey2
     {
         [DataMember(Name = "role_id")]
         public long RoleId { get; set; }
@@ -91,7 +96,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseTeam
+    public class GetEnterpriseTeam
     {
         [DataMember(Name = "team_uid")]
         public string TeamUid { get; set; }
@@ -116,7 +121,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseTeamUser
+    public class GetEnterpriseTeamUser
     {
         [DataMember(Name = "team_uid")]
         public string TeamUid { get; set; }
@@ -126,7 +131,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseUser : IEncryptedData, IDisplayName
+    public class GetEnterpriseUser : IEncryptedData
     {
         [DataMember(Name = "enterprise_user_id")]
         public long EnterpriseUserId { get; set; }
@@ -151,12 +156,10 @@ namespace Commander
 
         [DataMember(Name = "encrypted_data")]
         public string EncryptedData { get; set; }
-
-        public string DisplayName { get; set; }
     }
 
     [DataContract]
-    public class DeviceForAdminApproval
+    public class GetDeviceForAdminApproval
     {
         [DataMember(Name = "enterprise_user_id")]
         public long EnterpriseUserId { get; set; }
@@ -175,7 +178,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseKeys
+    public class GetEnterpriseKeys
     {
         [DataMember(Name = "rsa_public_key")]
         public string RsaPublicKey { get; set; }
@@ -189,7 +192,7 @@ namespace Commander
     }
 
     [DataContract]
-    public class EnterpriseDataResponse : KeeperApiResponse
+    public class GetEnterpriseDataResponse : KeeperApiResponse
     {
         [DataMember(Name = "enterprise_name")]
         public string EnterpriseName { get; set; }
@@ -201,34 +204,34 @@ namespace Commander
         public int KeyTypeId { get; set; }
 
         [DataMember(Name = "nodes")]
-        public ICollection<EnterpriseNode> Nodes { get; set; }
+        public ICollection<GetEnterpriseNode> Nodes { get; set; }
 
         [DataMember(Name = "roles")]
-        public ICollection<EnterpriseRole> Roles { get; set; }
+        public ICollection<GetEnterpriseRole> Roles { get; set; }
 
         [DataMember(Name = "role_users")]
-        public ICollection<EnterpriseRoleUser> RoleUsers { get; set; }
+        public ICollection<GetEnterpriseRoleUser> RoleUsers { get; set; }
 
         [DataMember(Name = "role_keys")]
-        public ICollection<EnterpriseRoleKey> RoleKeys { get; set; }
+        public ICollection<GetEnterpriseRoleKey> RoleKeys { get; set; }
 
         [DataMember(Name = "role_keys2")]
-        public ICollection<EnterpriseRoleKey2> RoleKeys2 { get; set; }
+        public ICollection<GetEnterpriseRoleKey2> RoleKeys2 { get; set; }
 
         [DataMember(Name = "teams")]
-        public ICollection<EnterpriseTeam> Teams { get; set; }
+        public ICollection<GetEnterpriseTeam> Teams { get; set; }
 
         [DataMember(Name = "team_users")]
-        public ICollection<EnterpriseTeamUser> TeamUsers { get; set; }
+        public ICollection<GetEnterpriseTeamUser> TeamUsers { get; set; }
 
         [DataMember(Name = "users")]
-        public ICollection<EnterpriseUser> Users { get; set; }
+        public ICollection<GetEnterpriseUser> Users { get; set; }
 
         [DataMember(Name = "devices_request_for_admin_approval")]
-        public ICollection<DeviceForAdminApproval> DeviceRequestForApproval { get; set; }
+        public ICollection<GetDeviceForAdminApproval> DeviceRequestForApproval { get; set; }
 
         [DataMember(Name = "keys")]
-        public EnterpriseKeys Keys { get; set; }
+        public GetEnterpriseKeys Keys { get; set; }
     }
 
     [DataContract]
@@ -270,5 +273,40 @@ namespace Commander
 
         [DataMember(Name = "transfer_key")]
         public string TransferKey { get; set; }
+    }
+
+    [DataContract]
+    public class TeamEnterpriseUserCommand : AuthenticatedCommand
+    {
+        public TeamEnterpriseUserCommand(string command) : base(command)
+        {
+        }
+
+        [DataMember(Name = "team_uid")]
+        public string TeamUid { get; set; }
+
+        [DataMember(Name = "enterprise_user_id")]
+        public long EnterpriseUserId { get; set; }
+    }
+
+    [DataContract]
+    public class TeamEnterpriseUserRemoveCommand : TeamEnterpriseUserCommand
+    {
+        public TeamEnterpriseUserRemoveCommand() : base("team_enterprise_user_remove")
+        {
+        }
+    }
+
+    [DataContract]
+    public class TeamEnterpriseUserAddCommand : TeamEnterpriseUserCommand
+    {
+        public TeamEnterpriseUserAddCommand() : base("team_enterprise_user_add")
+        {
+        }
+        [DataMember(Name = "user_type")]
+        public int UserType { get; set; }
+
+        [DataMember(Name = "team_key", EmitDefaultValue = false)]
+        public string TeamKey { get; set; }
     }
 }

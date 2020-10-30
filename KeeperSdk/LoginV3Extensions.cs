@@ -422,8 +422,9 @@ namespace KeeperSecurity.Sdk
             {
                 Username = auth.Username,
                 ClientVersion = auth.Endpoint.ClientVersion,
+                EncryptedDeviceToken = ByteString.CopyFrom(auth.DeviceToken),
                 MessageSessionUid = ByteString.CopyFrom(auth.MessageSessionUid),
-                VerificationCode = code
+                VerificationCode = code,
             };
 #if DEBUG
             Debug.WriteLine($"REST Request: endpoint \"validate_device_verification_code\": {request}");

@@ -259,10 +259,6 @@ namespace KeeperSecurity.Sdk
                     {
                         Flush();
                     }
-                    else
-                    {
-                        Debug.WriteLine("Why?");
-                    }
                 });
             }
         }

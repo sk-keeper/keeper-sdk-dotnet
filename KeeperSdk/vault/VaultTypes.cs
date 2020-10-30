@@ -13,10 +13,92 @@ using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
+using System.Threading.Tasks;
 
 namespace KeeperSecurity.Sdk
 {
+    public interface IVaultData
+    {
+        IKeeperStorage Storage { get; }
+        byte[] ClientKey { get; }
+
+        FolderNode RootFolder { get; }
+        IEnumerable<FolderNode> Folders { get; }
+        bool TryGetFolder(string folderUid, out FolderNode node);
+        
+        int RecordCount { get; }
+        IEnumerable<PasswordRecord> Records { get; }
+        bool TryGetRecord(string recordUid, out PasswordRecord node);
+
+        int SharedFolderCount { get; }
+        IEnumerable<SharedFolder> SharedFolders { get; }
+        bool TryGetSharedFolder(string sharedFolderUid, out SharedFolder sharedFolder);
+
+        int TeamCount { get; }
+        IEnumerable<Team> Teams { get; }
+        bool TryGetTeam(string teamUid, out Team team);
+    }
+
+    public interface IVaultUi
+    {
+        Task<bool> Confirmation(string information);
+    }
+
+    public class RecordPath
+    {
+        public string FolderUid { get; set; }
+        public string RecordUid { get; set; }
+    }
+
+    public interface ISharedFolderRecordOptions
+    {
+        bool? CanEdit { get; }
+        bool? CanShare { get; }
+    }
+
+    public interface ISharedFolderUserOptions
+    {
+        bool? ManageUsers { get; }
+        bool? ManageRecords { get; }
+    }
+
+    public interface IVault : IVaultData
+    {
+        IVaultUi VaultUi { get; }
+        Task<PasswordRecord> CreateRecord(PasswordRecord record, string folderUid = null);
+        Task<PasswordRecord> UpdateRecord(PasswordRecord record);
+        Task DeleteRecords(RecordPath[] records);
+        Task MoveRecords(RecordPath[] records, string dstFolderUid, bool link = false);
+        Task StoreNonSharedData<T>(string recordUid, T nonSharedData) where T : RecordNonSharedDataData;
+
+        Task<FolderNode> CreateFolder<T>(string name, string parentFolderUid = null, T sharedFolderOptions = null) 
+            where T: class, ISharedFolderUserOptions, ISharedFolderRecordOptions;
+        Task<FolderNode> RenameFolder(string folderUid, string newName);
+        Task MoveFolder(string srcFolderUid, string dstFolderUid, bool link = false);
+        Task DeleteFolder(string folderUid);
+    }
+
+    public interface IVaultSharedFolder
+    {
+        Task PutUserToSharedFolder(string sharedFolderUid, string userId, UserType userType, ISharedFolderUserOptions options = null);
+        Task RemoveUserFromSharedFolder(string sharedFolderUid, string userId, UserType userType);
+
+        Task ChangeRecordInSharedFolder(string sharedFolderUid, string recordUid, ISharedFolderRecordOptions options);
+    }
+
+    public class VaultException : Exception
+    {
+        public VaultException(string message) : base(message)
+        {
+        }
+        public VaultException(string translationKey, string message) : base(message)
+        {
+            TranslationKey = translationKey;
+        }
+
+        public string TranslationKey { get; }
+    }
+
     public class PasswordRecord
     {
         public string Uid { get; set; }
@@ -142,13 +224,19 @@ namespace KeeperSecurity.Sdk
         public byte[] SharedFolderKey { get; set; }
     }
 
-    public class EnterpriseTeam
+    public class TeamInfo
     {
-        public EnterpriseTeam()
+        public string TeamUid { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class Team: TeamInfo
+    {
+        internal Team()
         {
         }
 
-        internal EnterpriseTeam(IEnterpriseTeam et, byte[] teamKey)
+        internal Team(IEnterpriseTeam et, byte[] teamKey)
         {
             TeamKey = teamKey;
             var pk = et.TeamPrivateKey.Base64UrlDecode();
@@ -160,8 +248,6 @@ namespace KeeperSecurity.Sdk
             RestrictView = et.RestrictView;
         }
 
-        public string TeamUid { get; set; }
-        public string Name { get; set; }
         public bool RestrictEdit { get; set; }
         public bool RestrictShare { get; set; }
         public bool RestrictView { get; set; }
@@ -177,13 +263,14 @@ namespace KeeperSecurity.Sdk
         SharedFolderFolder
     }
 
+
     public class FolderNode
     {
-        public string ParentUid { get; set; }
-        public string FolderUid { get; set; }
-        public string SharedFolderUid { get; set; }
-        public FolderType FolderType { get; set; } = FolderType.UserFolder;
-        public string Name { get; set; }
+        public string ParentUid { get; internal set; }
+        public string FolderUid { get; internal set; }
+        public string SharedFolderUid { get; internal set; }
+        public FolderType FolderType { get; internal set; } = FolderType.UserFolder;
+        public string Name { get; internal set; }
         public IList<string> Subfolders { get; } = new List<string>();
         public IList<string> Records { get; } = new List<string>();
     }
@@ -201,131 +288,18 @@ namespace KeeperSecurity.Sdk
         string TeamUid { get; set; }
     }
 
-    [DataContract]
-    internal class RecordUpdateUData : IExtensibleDataObject
+    public static class VaultTypeExtensions
     {
-        [DataMember(Name = "file_ids", EmitDefaultValue = false)]
-        public string[] FileIds;
-
-        public ExtensionDataObject ExtensionData { get; set; }
-    }
-
-    [DataContract]
-    internal class RecordUpdateRecord : IRecordAccessPath
-    {
-        [DataMember(Name = "record_uid")] public string RecordUid { get; set; }
-
-        [DataMember(Name = "record_key", EmitDefaultValue = false)]
-        public string RecordKey;
-
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public string Data;
-
-        [DataMember(Name = "extra", EmitDefaultValue = false)]
-        public string Extra;
-
-        [DataMember(Name = "udata", EmitDefaultValue = false)]
-        public RecordUpdateUData Udata;
-
-        [DataMember(Name = "non_shared_data", EmitDefaultValue = false)]
-        public string NonSharedData;
-
-        [DataMember(Name = "revision")] public long Revision;
-
-        [DataMember(Name = "version")] public long Version = 2;
-
-        [DataMember(Name = "client_modified_time")]
-        public long ClientModifiedTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-
-        [DataMember(Name = "shared_folder_uid", EmitDefaultValue = false)]
-        public string SharedFolderUid { get; set; }
-
-        [DataMember(Name = "team_uid", EmitDefaultValue = false)]
-        public string TeamUid { get; set; }
-    }
-
-#pragma warning disable 0649
-    [DataContract]
-    internal class RecordUpdateCommand : AuthenticatedCommand
-    {
-        public RecordUpdateCommand() : base("record_update")
+        internal static readonly IDictionary<FolderType, string> FolderTypes = new Dictionary<FolderType, string>
         {
-        }
+            {FolderType.UserFolder, "user_folder"},
+            {FolderType.SharedFolder, "shared_folder"},
+            {FolderType.SharedFolderFolder, "shared_folder_folder"},
+        };
 
-        [DataMember(Name = "pt")] public string pt = DateTime.Now.Ticks.ToString("x");
-
-        [DataMember(Name = "client_time")] public long ClientTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-
-        [DataMember(Name = "add_records", EmitDefaultValue = false)]
-        public RecordUpdateRecord[] AddRecords;
-
-        [DataMember(Name = "update_records", EmitDefaultValue = false)]
-        public RecordUpdateRecord[] UpdateRecords;
-
-        [DataMember(Name = "remove_records", EmitDefaultValue = false)]
-        public string[] RemoveRecords;
-
-        [DataMember(Name = "delete_records", EmitDefaultValue = false)]
-        public string[] DeleteRecords;
-    }
-
-    [DataContract]
-    internal class RecordUpdateStatus
-    {
-        [DataMember(Name = "record_uid")] public string RecordUid;
-
-        [DataMember(Name = "status_code")] public string StatusCode;
-    }
-
-    [DataContract]
-    internal class RecordUpdateResponse : KeeperApiResponse
-    {
-        [DataMember(Name = "add_records")] public RecordUpdateStatus[] AddRecords;
-
-        [DataMember(Name = "update_records")] public RecordUpdateRecord[] UpdateRecords;
-
-        [DataMember(Name = "remove_records")] public RecordUpdateStatus[] RemoveRecords;
-
-        [DataMember(Name = "delete_records")] public RecordUpdateStatus[] DeleteRecords;
-
-        [DataMember(Name = "revision")] public long Revision;
-    }
-
-    [DataContract]
-    internal class RecordAddCommand : AuthenticatedCommand
-    {
-        public RecordAddCommand() : base("record_add")
+        public static string GetFolderTypeText(this FolderType folderType)
         {
+            return FolderTypes[folderType];
         }
-
-        [DataMember(Name = "record_uid")] public string RecordUid;
-
-        [DataMember(Name = "record_key")] public string RecordKey;
-
-        [DataMember(Name = "record_type")] public string RecordType; // password
-
-        [DataMember(Name = "folder_type")] // one of: user_folder, shared_folder, shared_folder_folder
-        public string FolderType;
-
-        [DataMember(Name = "how_long_ago")] public int HowLongAgo = 0;
-
-        [DataMember(Name = "folder_uid", EmitDefaultValue = false)]
-        public string FolderUid;
-
-        [DataMember(Name = "folder_key", EmitDefaultValue = false)]
-        public string FolderKey;
-
-        [DataMember(Name = "data")] public string Data;
-
-        [DataMember(Name = "extra", EmitDefaultValue = false)]
-        public string Extra;
-
-        [DataMember(Name = "non_shared_data", EmitDefaultValue = false)]
-        public string NonSharedData;
-
-        [DataMember(Name = "file_ids", EmitDefaultValue = false)]
-        public string[] FileIds;
     }
-
-#pragma warning restore 0649
 }

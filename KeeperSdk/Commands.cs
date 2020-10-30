@@ -259,6 +259,22 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
+    public class ExecuteCommand : AuthenticatedCommand
+    {
+        public ExecuteCommand() : base("execute") { }
+
+        [DataMember(Name = "requests", EmitDefaultValue = false)]
+        public ICollection<KeeperApiCommand> Requests { get; set; }
+    }
+
+    [DataContract]
+    public class ExecuteResponse : KeeperApiResponse
+    {
+        [DataMember(Name = "results")]
+        public IList<KeeperApiResponse> Results { get; set; }
+    }
+
+    [DataContract]
     public class SecurityKeyAuthenticateRequest
     {
         [DataMember(Name = "version")]

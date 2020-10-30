@@ -21,7 +21,7 @@ namespace KeeperSecurity.Sdk
 {
     public static class SyncDownExtension
     {
-        public static async Task SyncDown(this Vault vault)
+        public static async Task SyncDown(this VaultOnline vault)
         {
             var storage = vault.Storage;
             var context = vault.Auth.AuthContext;

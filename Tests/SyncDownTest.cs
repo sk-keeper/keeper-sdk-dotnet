@@ -172,14 +172,14 @@ namespace Tests
             return auth.Object;
         }
 
-        private async Task<Vault> GetVault() {
+        private async Task<VaultOnline> GetVault() {
             var auth = GetConnectedAuthContext();
             var authMock = Mock.Get(auth);
             authMock
                 .Setup(x => x.ExecuteAuthCommand(It.IsAny<SyncDownCommand>(), It.IsAny<Type>()))
                 .Returns<SyncDownCommand, Type>((c, t) => Task.FromResult((KeeperApiResponse)_vaultEnv.GetSyncDownResponse()));
 
-            var vault = new Vault(auth);
+            var vault = new VaultOnline(auth);
             await vault.SyncDown();
             return vault;
         }

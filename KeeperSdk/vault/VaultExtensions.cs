@@ -20,6 +20,71 @@ namespace KeeperSecurity.Sdk
 {
     public static class VaultExtensions
     {
+
+        public static IRecordMetadata ResolveRecordAccessPath(this IVault vault, IRecordAccessPath path, bool forEdit = false,
+            bool forShare = false, bool forView = false)
+        {
+            if (string.IsNullOrEmpty(path.RecordUid))
+            {
+                return null;
+            }
+
+            foreach (var rmd in vault.Storage.RecordKeys.GetLinksForSubject(path.RecordUid))
+            {
+                if (forEdit && !rmd.CanEdit) continue;
+                if (forShare && !rmd.CanShare) continue;
+                if (string.IsNullOrEmpty(rmd.SharedFolderUid) || rmd.SharedFolderUid == vault.Storage.PersonalScopeUid)
+                {
+                    return rmd;
+                }
+
+                foreach (var sfmd in vault.Storage.SharedFolderKeys.GetLinksForSubject(rmd.SharedFolderUid))
+                {
+                    if (string.IsNullOrEmpty(sfmd.TeamUid))
+                    {
+                        path.SharedFolderUid = sfmd.SharedFolderUid;
+                        return rmd;
+                    }
+
+                    if (!forEdit && !forShare && !forView)
+                    {
+                        path.SharedFolderUid = sfmd.SharedFolderUid;
+                        path.TeamUid = sfmd.TeamUid;
+                        return rmd;
+                    }
+
+                    if (!vault.TryGetTeam(sfmd.TeamUid, out var team)) continue;
+                    if (forEdit && team.RestrictEdit) continue;
+                    if (forShare && team.RestrictShare) continue;
+                    if (forView && team.RestrictView) continue;
+
+                    path.SharedFolderUid = sfmd.SharedFolderUid;
+                    path.TeamUid = sfmd.TeamUid;
+                    return rmd;
+                }
+            }
+
+            return null;
+        }
+        
+        public static SharedFolderPermission ResolveSharedFolderAccessPath(this IVault vault, string username,
+            string sharedFolderUid, bool forManageUsers = false, bool forManageRecords = false)
+        {
+            if (string.IsNullOrEmpty(sharedFolderUid)) return null;
+            if (!vault.TryGetSharedFolder(sharedFolderUid, out var sf)) return null;
+            
+            var permissions = sf.UsersPermissions
+                .Where(x => 
+                    x.UserType == UserType.User && x.UserId == username ||
+                    x.UserType == UserType.Team && vault.TryGetTeam(x.UserId, out _))
+                .Where(x => (!forManageUsers || x.ManageUsers) && (!forManageRecords || x.ManageRecords))
+                .ToArray();
+
+            if (permissions.Length <= 0) return null;
+            return permissions.FirstOrDefault(x => x.UserType == UserType.User) ?? permissions[0];
+        }
+
+
         public static RecordData ExtractRecordData(this PasswordRecord record, RecordData existingData = null)
         {
             return new RecordData

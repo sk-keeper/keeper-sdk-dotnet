@@ -110,14 +110,15 @@ namespace AccountSummary {
             "Y291bnRTdW1tYXJ5LkRldmljZVJlZ2lzdHJhdGlvbiJ5ChJEZXZpY2VSZWdp",
             "c3RyYXRpb24SEQoJa2V5SGFuZGxlGAEgASgJEhEKCXB1YmxpY0tleRgCIAEo",
             "DBIXCg9hdHRlc3RhdGlvbkNlcnQYAyABKAkSDwoHY291bnRlchgEIAEoAxIT",
-            "Cgtjb21wcm9taXNlZBgFIAEoCCJMCgVHcm91cBINCgVhZG1pbhgBIAEoCBI0",
-            "Cg1hZG1pbmlzdHJhdG9yGAQgASgLMh0uQWNjb3VudFN1bW1hcnkuQWRtaW5p",
-            "c3RyYXRvciLAAQoNQWRtaW5pc3RyYXRvchIRCglmaXJzdE5hbWUYASABKAkS",
-            "EAoIbGFzdE5hbWUYAiABKAkSDQoFZW1haWwYAyABKAkSHAoUY3VycmVudE51",
-            "bWJlck9mVXNlcnMYBCABKAUSFQoNbnVtYmVyT2ZVc2VycxgFIAEoBRIYChBz",
-            "dWJzY3JpcHRpb25Db2RlGAcgASgJEhYKDmV4cGlyYXRpb25EYXRlGAggASgJ",
-            "EhQKDHB1cmNoYXNlRGF0ZRgJIAEoCUIqChhjb20ua2VlcGVyc2VjdXJpdHku",
-            "cHJvdG9CDkFjY291bnRTdW1tYXJ5YgZwcm90bzM="));
+            "Cgtjb21wcm9taXNlZBgFIAEoCCJrCgVHcm91cBINCgVhZG1pbhgBIAEoCBId",
+            "ChVncm91cFZlcmlmaWNhdGlvbkNvZGUYAiABKAkSNAoNYWRtaW5pc3RyYXRv",
+            "chgEIAEoCzIdLkFjY291bnRTdW1tYXJ5LkFkbWluaXN0cmF0b3IiwAEKDUFk",
+            "bWluaXN0cmF0b3ISEQoJZmlyc3ROYW1lGAEgASgJEhAKCGxhc3ROYW1lGAIg",
+            "ASgJEg0KBWVtYWlsGAMgASgJEhwKFGN1cnJlbnROdW1iZXJPZlVzZXJzGAQg",
+            "ASgFEhUKDW51bWJlck9mVXNlcnMYBSABKAUSGAoQc3Vic2NyaXB0aW9uQ29k",
+            "ZRgHIAEoCRIWCg5leHBpcmF0aW9uRGF0ZRgIIAEoCRIUCgxwdXJjaGFzZURh",
+            "dGUYCSABKAlCKgoYY29tLmtlZXBlcnNlY3VyaXR5LnByb3RvQg5BY2NvdW50",
+            "U3VtbWFyeWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Authentication.APIRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -138,7 +139,7 @@ namespace AccountSummary {
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.PasswordRule), global::AccountSummary.PasswordRule.Parser, new[]{ "RuleType", "Pattern", "Match", "Minimum", "Description", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.SecurityKey), global::AccountSummary.SecurityKey.Parser, new[]{ "DeviceId", "DeviceName", "DateAdded", "IsValid", "DeviceRegistration" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.DeviceRegistration), global::AccountSummary.DeviceRegistration.Parser, new[]{ "KeyHandle", "PublicKey", "AttestationCert", "Counter", "Compromised" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.Group), global::AccountSummary.Group.Parser, new[]{ "Admin", "Administrator" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.Group), global::AccountSummary.Group.Parser, new[]{ "Admin", "GroupVerificationCode", "Administrator" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AccountSummary.Administrator), global::AccountSummary.Administrator.Parser, new[]{ "FirstName", "LastName", "Email", "CurrentNumberOfUsers", "NumberOfUsers", "SubscriptionCode", "ExpirationDate", "PurchaseDate" }, null, null, null, null)
           }));
     }
@@ -5552,6 +5553,7 @@ namespace AccountSummary {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Group(Group other) : this() {
       admin_ = other.admin_;
+      groupVerificationCode_ = other.groupVerificationCode_;
       administrator_ = other.administrator_ != null ? other.administrator_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -5572,11 +5574,21 @@ namespace AccountSummary {
       }
     }
 
+    /// <summary>Field number for the "groupVerificationCode" field.</summary>
+    public const int GroupVerificationCodeFieldNumber = 2;
+    private string groupVerificationCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupVerificationCode {
+      get { return groupVerificationCode_; }
+      set {
+        groupVerificationCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "administrator" field.</summary>
     public const int AdministratorFieldNumber = 4;
     private global::AccountSummary.Administrator administrator_;
     /// <summary>
-    /// string groupVerificationCode = 2;
     /// repeated KeyValue groupSettings = 3; ///// ?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5601,6 +5613,7 @@ namespace AccountSummary {
         return true;
       }
       if (Admin != other.Admin) return false;
+      if (GroupVerificationCode != other.GroupVerificationCode) return false;
       if (!object.Equals(Administrator, other.Administrator)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -5609,6 +5622,7 @@ namespace AccountSummary {
     public override int GetHashCode() {
       int hash = 1;
       if (Admin != false) hash ^= Admin.GetHashCode();
+      if (GroupVerificationCode.Length != 0) hash ^= GroupVerificationCode.GetHashCode();
       if (administrator_ != null) hash ^= Administrator.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -5627,6 +5641,10 @@ namespace AccountSummary {
         output.WriteRawTag(8);
         output.WriteBool(Admin);
       }
+      if (GroupVerificationCode.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(GroupVerificationCode);
+      }
       if (administrator_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(Administrator);
@@ -5641,6 +5659,9 @@ namespace AccountSummary {
       int size = 0;
       if (Admin != false) {
         size += 1 + 1;
+      }
+      if (GroupVerificationCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupVerificationCode);
       }
       if (administrator_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Administrator);
@@ -5658,6 +5679,9 @@ namespace AccountSummary {
       }
       if (other.Admin != false) {
         Admin = other.Admin;
+      }
+      if (other.GroupVerificationCode.Length != 0) {
+        GroupVerificationCode = other.GroupVerificationCode;
       }
       if (other.administrator_ != null) {
         if (administrator_ == null) {
@@ -5678,6 +5702,10 @@ namespace AccountSummary {
             break;
           case 8: {
             Admin = input.ReadBool();
+            break;
+          }
+          case 18: {
+            GroupVerificationCode = input.ReadString();
             break;
           }
           case 34: {

@@ -57,7 +57,7 @@ namespace KeeperSecurity.Sdk
         private ISet<string> _sharedFolders;
     }
 
-    public class VaultData
+    public class VaultData: IVaultData
     {
         public VaultData(byte[] clientKey, IKeeperStorage storage)
         {
@@ -89,9 +89,9 @@ namespace KeeperSecurity.Sdk
         }
 
         public int TeamCount => keeperTeams.Count;
-        public IEnumerable<EnterpriseTeam> Teams => keeperTeams.Values;
+        public IEnumerable<Team> Teams => keeperTeams.Values;
 
-        public bool TryGetTeam(string teamUid, out EnterpriseTeam team)
+        public bool TryGetTeam(string teamUid, out Team team)
         {
             return keeperTeams.TryGetValue(teamUid, out team);
         }
@@ -111,8 +111,8 @@ namespace KeeperSecurity.Sdk
         protected readonly ConcurrentDictionary<string, SharedFolder> keeperSharedFolders =
             new ConcurrentDictionary<string, SharedFolder>();
 
-        protected readonly ConcurrentDictionary<string, EnterpriseTeam> keeperTeams =
-            new ConcurrentDictionary<string, EnterpriseTeam>();
+        protected readonly ConcurrentDictionary<string, Team> keeperTeams =
+            new ConcurrentDictionary<string, Team>();
 
         protected readonly ConcurrentDictionary<string, FolderNode> keeperFolders =
             new ConcurrentDictionary<string, FolderNode>();
@@ -132,7 +132,7 @@ namespace KeeperSecurity.Sdk
                 try
                 {
                     var teamKey = CryptoUtils.DecryptAesV1(team.TeamKey.Base64UrlDecode(), ClientKey);
-                    var t = new EnterpriseTeam(team, teamKey);
+                    var t = new Team(team, teamKey);
                     keeperTeams.TryAdd(t.TeamUid, t);
                 }
                 catch (Exception e)
@@ -176,7 +176,7 @@ namespace KeeperSecurity.Sdk
                                     sfKey = CryptoUtils.DecryptAesV1(sfKey, ClientKey);
                                     break;
                                 case (int) KeyType.TeamKey:
-                                    if (keeperTeams.TryGetValue(sfmd.TeamUid, out EnterpriseTeam team))
+                                    if (keeperTeams.TryGetValue(sfmd.TeamUid, out Team team))
                                     {
                                         sfKey = CryptoUtils.DecryptAesV1(sfKey, team.TeamKey);
                                     }

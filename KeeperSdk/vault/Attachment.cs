@@ -83,7 +83,7 @@ namespace KeeperSecurity.Sdk
     public static class AttachmentExtensions
     {
 
-        public static async Task<WebRequest> CreateAttachmentDownloadRequest(this Vault vault, string recordUid, string attachmentId)
+        public static async Task<WebRequest> CreateAttachmentDownloadRequest(this VaultOnline vault, string recordUid, string attachmentId)
         {
             var command = new RequestDownloadCommand
             {
@@ -98,7 +98,7 @@ namespace KeeperSecurity.Sdk
             return WebRequest.Create(new Uri(download.Url));
         }
 
-        public static async Task DownloadAttachment(this Vault vault, PasswordRecord record, string attachment, Stream destination)
+        public static async Task DownloadAttachment(this VaultOnline vault, PasswordRecord record, string attachment, Stream destination)
         {
             if (record.Attachments == null)
             {
@@ -225,7 +225,7 @@ namespace KeeperSecurity.Sdk
             }
         }
 
-        public static async Task UploadAttachment(this Vault vault, PasswordRecord record, IAttachmentUploadTask uploadTask)
+        public static async Task UploadAttachment(this VaultOnline vault, PasswordRecord record, IAttachmentUploadTask uploadTask)
         {
             var fileStream = uploadTask.Stream;
             if (fileStream == null)
