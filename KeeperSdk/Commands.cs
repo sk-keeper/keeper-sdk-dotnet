@@ -12,7 +12,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace KeeperSecurity.Sdk
+namespace KeeperSecurity.Commands
 {
     [DataContract]
     public class KeeperApiCommand
@@ -80,41 +80,6 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class LoginCommand : KeeperApiCommand
-    {
-        public LoginCommand() : base("login")
-        {
-        }
-
-        [DataMember(Name = "version")]
-        public int version = 2;
-
-        [DataMember(Name = "include")]
-        public string[] include;
-
-        [DataMember(Name = "auth_response")]
-        public string authResponse;
-
-        [DataMember(Name = "username")]
-        public string username;
-
-        [DataMember(Name = "2fa_type", EmitDefaultValue = false)]
-        public string twoFactorType;
-
-        [DataMember(Name = "2fa_token", EmitDefaultValue = false)]
-        public string twoFactorToken;
-
-        [DataMember(Name = "2fa_mode", EmitDefaultValue = false)]
-        public string twoFactorMode;
-
-        [DataMember(Name = "device_token_expire_days", EmitDefaultValue = false)]
-        public int? deviceTokenExpiresInDays;
-
-        [DataMember(Name = "platform_device_token", EmitDefaultValue = false)]
-        public string platformDeviceToken;
-    }
-
-    [DataContract]
     public class PasswordRequirements
     {
         [DataMember(Name = "password_rules_intro", EmitDefaultValue = false)]
@@ -138,71 +103,6 @@ namespace KeeperSecurity.Sdk
 
         [DataMember(Name = "rule_type")]
         public string ruleType;
-    }
-
-
-    [DataContract]
-    public class LoginResponse : KeeperApiResponse
-    {
-        [DataMember(Name = "session_token")]
-        public string sessionToken;
-
-        [DataMember(Name = "device_token")]
-        public string deviceToken;
-
-        [DataMember(Name = "dt_scope")]
-        public string deviceTokenScope;
-
-        /*
-        "two_factor_channel_sms" - Users receive a TOTP code via text message.
-        "two_factor_channel_voice" - Users receive a TOTP code via phone call.
-        "two_factor_channel_google" - Users look up TOTP codes on their Google Authenticator app.
-        "two_factor_channel_rsa" - Users authenticate against an RSA server, using either a generated passcode or a pin.
-        "two_factor_channel_duo" - Users authenticate through Duo Security.
-        "two_factor_channel_push" - Users authenticate through Keeper DNA.
-        "two_factor_channel_u2f" - Users authenticate with a U2F Security Key, using challenge-response.
-        */
-        [DataMember(Name = "channel")]
-        public string channel;
-
-        [DataMember(Name = "capabilities")]
-        public string[] capabilities;
-
-        /*  DUO account capabilities
-         *  "push"    
-         *  "sms"
-         *  "phone"
-         *  "mobile_otp"   ????
-         */
-        [DataMember(Name = "phone")]
-        public string phone; // Phone number associated with Two Factor Method
-
-        [DataMember(Name = "url")]
-        public string url; // websocket URL associated with Two Factor Method
-
-        [DataMember(Name = "enroll_url")]
-        public string enrollUrl; // requires 2FA enrollment
-
-        [DataMember(Name = "client_key")]
-        public string clientKey;
-
-        [DataMember(Name = "keys")]
-        public AccountKeys keys;
-
-        [DataMember(Name = "enforcements")]
-        public IDictionary<string, object> Enforcements { get; set; }
-
-        [DataMember(Name = "password_rules_intro", EmitDefaultValue = false)]
-        public string passwordRulesIntro;
-
-        [DataMember(Name = "password_rules", EmitDefaultValue = false)]
-        public PasswordRule[] passwordRules;
-
-        [DataMember(Name = "iterations")]
-        public int? iterations;
-
-        [DataMember(Name = "salt")]
-        public string salt;
     }
 
     [DataContract]
@@ -259,56 +159,18 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class SecurityKeyAuthenticateRequest
+    public class ExecuteCommand : AuthenticatedCommand
     {
-        [DataMember(Name = "version")]
-        public string version;
+        public ExecuteCommand() : base("execute") { }
 
-        [DataMember(Name = "appId")]
-        public string appId;
-
-        [DataMember(Name = "challenge")]
-        public string challenge;
-
-        [DataMember(Name = "keyHandle")]
-        public string keyHandle;
+        [DataMember(Name = "requests", EmitDefaultValue = false)]
+        public ICollection<KeeperApiCommand> Requests { get; set; }
     }
 
     [DataContract]
-    public class SecurityKeyRequest
+    public class ExecuteResponse : KeeperApiResponse
     {
-        [DataMember(Name = "authenticateRequests")]
-        public SecurityKeyAuthenticateRequest[] authenticateRequests;
-    }
-
-    [DataContract]
-    public class SecurityKeyClientData
-    {
-        public const string U2F_REGISTER = "navigator.id.finishEnrollment";
-        public const string U2F_SIGN = "navigator.id.getAssertion";
-
-        [DataMember(Name = "typ", Order = 1)]
-        public string dataType;
-        [DataMember(Name = "challenge", Order = 2)]
-        public string challenge;
-        [DataMember(Name = "origin", Order = 3)]
-        public string origin;
-    }
-
-    public class SecurityKeySignature
-    {
-        [DataMember(Name = "clientData", Order = 1)]
-        public string clientData;
-        [DataMember(Name = "signatureData", Order = 2)]
-        public string signatureData;
-        [DataMember(Name = "keyHandle", Order = 3)]
-        public string keyHandle;
-    }
-
-    public class U2FSignature
-    {
-        public byte[] clientData;
-        public byte[] signatureData;
-        public byte[] keyHandle;
+        [DataMember(Name = "results")]
+        public IList<KeeperApiResponse> Results { get; set; }
     }
 }

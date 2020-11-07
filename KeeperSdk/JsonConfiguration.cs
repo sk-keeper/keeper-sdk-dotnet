@@ -16,18 +16,42 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using KeeperSecurity.Utils;
 
-namespace KeeperSecurity.Sdk
+namespace KeeperSecurity.Configuration
 {
-    public interface IStorageProtection
+    /// <summary>
+    /// Defines the methods for protecting sensitive storage information.
+    /// </summary>
+    /// <seealso cref="KeeperEncryptionAesV2Protector"/>
+    public interface IConfigurationProtection
     {
+        /// <summary>
+        /// Encrypts / Obfuscates text.
+        /// </summary>
+        /// <param name="data">Plain test</param>
+        /// <returns>Encrypted text.</returns>
         string Obscure(string data);
+
+        /// <summary>
+        /// Decrypts previously encrypted text.
+        /// </summary>
+        /// <param name="data">Encrypted text</param>
+        /// <returns>Plain text.</returns>
         string Clarify(string data);
     }
 
-    public interface IStorageProtectionFactory
+    /// <summary>
+    /// Resolves a <see cref="IConfigurationProtection"/> instance by name.
+    /// </summary>
+    public interface IConfigurationProtectionFactory
     {
-        IStorageProtection Resolve(string protection);
+        /// <summary>
+        /// Finds <c>IConfigurationProtection</c> instance by name.
+        /// </summary>
+        /// <param name="protection">Protection method name.</param>
+        /// <returns>Configuration protection</returns>
+        IConfigurationProtection Resolve(string protection);
     }
 
     internal interface IEntityClone<in T>
@@ -80,16 +104,38 @@ namespace KeeperSecurity.Sdk
         public IEnumerable<IT> List => _listFunc().Cast<IT>();
     }
 
+    /// <summary>
+    /// Defines JSON serialization methods
+    /// </summary>
+    /// <remarks>
+    /// Keeper SDK library implements JSON serialization to file.
+    /// </remarks>
+    /// <seealso cref="JsonConfigurationFileLoader"/>
     public interface IJsonConfigurationLoader
     {
+        /// <summary>
+        /// Loads JSON data
+        /// </summary>
+        /// <returns>JSON data</returns>
         byte[] LoadJson();
+        /// <summary>
+        /// Stores JSON data.
+        /// </summary>
+        /// <param name="json">JSON data.</param>
         void StoreJson(byte[] json);
     }
 
+    /// <summary>
+    /// Caches requests to load/store JSON configuration.
+    /// </summary>
     public class JsonConfigurationCache
     {
         private readonly IJsonConfigurationLoader _loader;
 
+        /// <summary>
+        /// Creates JSON configuration cache instance.
+        /// </summary>
+        /// <param name="loader">JSON loader</param>
         public JsonConfigurationCache(IJsonConfigurationLoader loader)
         {
             _loader = loader;
@@ -97,16 +143,33 @@ namespace KeeperSecurity.Sdk
             WriteTimeout = 2000;
         }
 
+        /// <summary>
+        /// Gets / sets read timeout in milliseconds.
+        /// </summary>
+        /// <remarks>Default value is 2 seconds.</remarks>
         public int ReadTimeout { get; set; }
         private long _readEpochMillis;
 
+        /// <exclude/>
         public bool SkipSecurity { get; set; }
+
+        /// <summary>
+        /// Gets / sets configuration protection algorithm.
+        /// </summary>
+        /// <seealso cref="IConfigurationProtectionFactory"/>
         public string SecurityAlgorithm { get; set; }
+
+        /// <summary>
+        /// Gets / sets write timeout in milliseconds.
+        /// </summary>
+        /// <remarks>
+        /// Default timeout is 2 seconds.
+        /// </remarks>
         public int WriteTimeout { get; set; }
 
         private JsonConfiguration _configuration;
 
-        public JsonConfiguration Configuration
+        internal JsonConfiguration Configuration
         {
             get
             {
@@ -129,9 +192,9 @@ namespace KeeperSecurity.Sdk
                             try
                             {
                                 _configuration = JsonUtils.ParseJson<JsonConfiguration>(jsonBytes);
-                                if (StorageProtection != null && !string.IsNullOrEmpty(_configuration.security))
+                                if (ConfigurationProtection != null && !string.IsNullOrEmpty(_configuration.security))
                                 {
-                                    var protector = StorageProtection.Resolve(_configuration.security);
+                                    var protector = ConfigurationProtection.Resolve(_configuration.security);
                                     if (protector != null)
                                     {
                                         if (_configuration.users != null)
@@ -246,6 +309,10 @@ namespace KeeperSecurity.Sdk
         }
 
         private Task _storeConfigurationTask;
+
+        /// <summary>
+        /// Schedules storing of configuration.
+        /// </summary>
         public void Save()
         {
             lock (this)
@@ -259,14 +326,13 @@ namespace KeeperSecurity.Sdk
                     {
                         Flush();
                     }
-                    else
-                    {
-                        Debug.WriteLine("Why?");
-                    }
                 });
             }
         }
 
+        /// <summary>
+        /// Stores configuration immediately.
+        /// </summary>
         public void Flush()
         {
             lock (this)
@@ -275,9 +341,9 @@ namespace KeeperSecurity.Sdk
 
                 if (_configuration == null) return;
                 var algorithm = SecurityAlgorithm ?? _configuration.security;
-                if (!SkipSecurity && StorageProtection != null && !string.IsNullOrEmpty(algorithm))
+                if (!SkipSecurity && ConfigurationProtection != null && !string.IsNullOrEmpty(algorithm))
                 {
-                    var protector = StorageProtection.Resolve(algorithm);
+                    var protector = ConfigurationProtection.Resolve(algorithm);
                     if (protector != null)
                     {
                         _configuration.security = algorithm;
@@ -328,15 +394,33 @@ namespace KeeperSecurity.Sdk
             }
         }
 
-        public IStorageProtectionFactory StorageProtection { get; set; }
+        /// <summary>
+        /// Gets / sets configuration protection factory.
+        /// </summary>
+        public IConfigurationProtectionFactory ConfigurationProtection { get; set; }
     }
 
+    /// <summary>
+    /// Provides implementation of <see cref="IConfigurationStorage"/> stored in JSON format.
+    /// </summary>
     public sealed class JsonConfigurationStorage : IConfigurationStorage
     {
+        /// <summary>
+        /// Creates instance with default settings.
+        /// </summary>
+        /// <remarks>
+        /// Configuration is stored to JSON file named <c>config.json</c>
+        /// It uses file located in the current directory if it exists.
+        /// Otherwise file is created in User Document's <c>.keeper</c> older.
+        /// </remarks>
         public JsonConfigurationStorage() : this(new JsonConfigurationCache(new JsonConfigurationFileLoader()))
         {
         }
 
+        /// <summary>
+        /// Creates using provided configuration cache object.
+        /// </summary>
+        /// <param name="cache">Configuration cache.</param>
         public JsonConfigurationStorage(JsonConfigurationCache cache)
         {
             Cache = cache;
@@ -351,6 +435,9 @@ namespace KeeperSecurity.Sdk
                 Cache.Save);
         }
 
+        /// <summary>
+        /// Gets configuration cache
+        /// </summary>
         public JsonConfigurationCache Cache { get; }
 
         public IConfigCollection<IUserConfiguration> Users { get; }
@@ -378,12 +465,26 @@ namespace KeeperSecurity.Sdk
         }
     }
 
+    /// <summary>
+    /// Provides implementation od <see cref="IJsonConfigurationLoader"/> that stores configuration to file.
+    /// </summary>
     public class JsonConfigurationFileLoader : IJsonConfigurationLoader
     {
+        /// <summary>
+        /// Creates instance with default parameters.
+        /// </summary>
+        /// <remarks>
+        /// Json file name is <c>config.json</c>
+        /// If there is no such file in the current directory then it is created in the User Document's <c>.keeper</c> folder.
+        /// </remarks>
         public JsonConfigurationFileLoader() : this("config.json")
         {
         }
 
+        /// <summary>
+        /// Creates instance.
+        /// </summary>
+        /// <param name="fileName">File name or full path.</param>
         public JsonConfigurationFileLoader(string fileName)
         {
             if (File.Exists(fileName))
@@ -405,8 +506,15 @@ namespace KeeperSecurity.Sdk
             Debug.WriteLine($"JSON config path: \"{FilePath}\"");
         }
 
+        /// <summary>
+        /// Gets configuration file path.
+        /// </summary>
         public string FilePath { get; }
 
+        /// <summary>
+        /// Loads configuration from the file.
+        /// </summary>
+        /// <returns>JSON data</returns>
         public byte[] LoadJson()
         {
             if (File.Exists(FilePath))
@@ -424,6 +532,10 @@ namespace KeeperSecurity.Sdk
             return null;
         }
 
+        /// <summary>
+        /// Stores configuration to the file.
+        /// </summary>
+        /// <param name="json">JSON data</param>
         public void StoreJson(byte[] json)
         {
             try
@@ -438,7 +550,7 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class JsonUserDeviceConfiguration : IUserDeviceConfiguration, IEntityClone<IUserDeviceConfiguration>, IExtensibleDataObject
+    internal class JsonUserDeviceConfiguration : IUserDeviceConfiguration, IEntityClone<IUserDeviceConfiguration>, IExtensibleDataObject
     {
         [DataMember(Name = "device_token", EmitDefaultValue = false)]
         public string device_token;
@@ -462,7 +574,7 @@ namespace KeeperSecurity.Sdk
 
 
     [DataContract]
-    public class JsonUserConfiguration : IUserConfiguration, IEntityClone<IUserConfiguration>, IExtensibleDataObject
+    internal class JsonUserConfiguration : IUserConfiguration, IEntityClone<IUserConfiguration>, IExtensibleDataObject
     {
         [DataMember(Name = "user", EmitDefaultValue = false)]
         public string user;
@@ -513,7 +625,7 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class JsonServerConfiguration : IServerConfiguration, IEntityClone<IServerConfiguration>, IExtensibleDataObject
+    internal class JsonServerConfiguration : IServerConfiguration, IEntityClone<IServerConfiguration>, IExtensibleDataObject
     {
         [DataMember(Name = "server", EmitDefaultValue = false)]
         public string server;
@@ -543,7 +655,7 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class JsonDeviceServerConfiguration : IDeviceServerConfiguration, IEntityClone<IDeviceServerConfiguration>
+    internal class JsonDeviceServerConfiguration : IDeviceServerConfiguration, IEntityClone<IDeviceServerConfiguration>
     {
         [DataMember(Name = "server", EmitDefaultValue = false)]
         public string server;
@@ -567,7 +679,7 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class JsonDeviceConfiguration : IDeviceConfiguration, IEntityClone<IDeviceConfiguration>, IExtensibleDataObject
+    internal class JsonDeviceConfiguration : IDeviceConfiguration, IEntityClone<IDeviceConfiguration>, IExtensibleDataObject
     {
         [DataMember(Name = "device_token", EmitDefaultValue = false)]
         public string deviceToken;
@@ -625,7 +737,7 @@ namespace KeeperSecurity.Sdk
     }
 
     [DataContract]
-    public class JsonConfiguration : IExtensibleDataObject
+    internal class JsonConfiguration : IExtensibleDataObject
     {
         [DataMember(Name = "last_server", EmitDefaultValue = false)]
         public string lastServer;

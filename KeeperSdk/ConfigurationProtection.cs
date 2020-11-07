@@ -1,33 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using KeeperSecurity.Utils;
 
-namespace KeeperSecurity.Sdk
+namespace KeeperSecurity.Configuration
 {
-    public class ConfigurationProtectionFactory : IStorageProtectionFactory
+    /// <summary>
+    /// Provides default implementation of <c>IConfigurationProtectionFactory</c> interface
+    /// </summary>
+    /// <seealso cref="IConfigurationProtectionFactory"/>
+    public class ConfigurationProtectionFactory : IConfigurationProtectionFactory
     {
-        private readonly Dictionary<string, IStorageProtection> _registeredProtection =
-            new Dictionary<string, IStorageProtection>(StringComparer.InvariantCultureIgnoreCase);
+        private readonly Dictionary<string, IConfigurationProtection> _registeredProtection =
+            new Dictionary<string, IConfigurationProtection>(StringComparer.InvariantCultureIgnoreCase);
 
-        public IStorageProtection Resolve(string protection)
+        /// <summary>
+        /// Finds registered <see cref="IConfigurationProtection"/> instance by name.
+        /// </summary>
+        /// <param name="protection"></param>
+        /// <returns>Configuration protection</returns>
+        public IConfigurationProtection Resolve(string protection)
         {
             return _registeredProtection.TryGetValue(protection, out var sp) ? sp : null;
         }
 
-        public void RegisterProtection(string protection, IStorageProtection storageProtector)
+        /// <summary>
+        /// Registers a <see cref="IConfigurationProtection"/> instance.
+        /// </summary>
+        /// <param name="protection">Name</param>
+        /// <param name="configurationProtector">Configuration protection Instance</param>
+        public void RegisterProtection(string protection, IConfigurationProtection configurationProtector)
         {
-            _registeredProtection[protection] = storageProtector;
+            _registeredProtection[protection] = configurationProtector;
         }
     }
 
-    public class KeeperEncryptionAesV2Protector : IStorageProtection
+    /// <summary>
+    /// Provides <see cref="IConfigurationProtection"/> implementation that uses AES GCM encryption.
+    /// </summary>
+    /// <seealso cref="IConfigurationProtection"/>
+    public class KeeperEncryptionAesV2Protector : IConfigurationProtection
     {
-        private byte[] _aesKey;
+        private readonly byte[] _aesKey;
+
+        /// <summary>
+        /// Initializes a new instance on the <see cref="KeeperEncryptionAesV2Protector"/> class
+        /// </summary>
+        /// <param name="aesKey">32 bytes AES GCM encryption key.</param>
         public KeeperEncryptionAesV2Protector(byte[] aesKey)
         {
             _aesKey = aesKey;
         }
 
+        /// <summary>
+        /// Encrypts / Obfuscates text.
+        /// </summary>
+        /// <param name="data">Plain test</param>
+        /// <returns>Encrypted text.</returns>
         public string Obscure(string data)
         {
             if (string.IsNullOrEmpty(data)) return null;
@@ -35,6 +64,11 @@ namespace KeeperSecurity.Sdk
             return encryptedData.Base64UrlEncode();
         }
 
+        /// <summary>
+        /// Decrypts previously encrypted text.
+        /// </summary>
+        /// <param name="data">Encrypted text</param>
+        /// <returns>Plain text.</returns>
         public string Clarify(string data)
         {
             if (string.IsNullOrEmpty(data)) return null;
